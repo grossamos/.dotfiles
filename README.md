@@ -17,5 +17,5 @@ All Dotfiles, that I currently use to power my configs. This repo aims to improv
 - theme: gruvbox
 - autocomplete
 
-## Zsh
+### Zsh
 
