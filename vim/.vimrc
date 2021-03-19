@@ -16,9 +16,6 @@ set incsearch
 filetype plugin indent on
 set title
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
@@ -29,7 +26,6 @@ Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
-colorscheme gruvbox
 set background=dark
 let mapleader = " "
 
