@@ -18,4 +18,7 @@ All Dotfiles, that I currently use to power my configs. This repo aims to improv
 - autocomplete
 
 ### Zsh
+- we are using oh my zsh as the main source for plugins
+- remember to set zsh as the default shell
+- for the terminal remember to set the terminal color theme to aci (ex. with gogh https://github.com/Mayccoll/Gogh)
 
