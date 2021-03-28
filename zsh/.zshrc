@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/amos/.oh-my-zsh"
+export PATH=$PATH:/usr/local/go/bin
+export CODE_DIR="/home/amos/Documents/CodeProjects"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -42,7 +44,7 @@ ZSH_THEME="parrot"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -102,3 +104,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias ll="ls -la"
 alias la="ls -a"
+alias code_dir="cd /home/amos/Documents/CodeProjects"

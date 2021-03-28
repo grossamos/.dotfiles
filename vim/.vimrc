@@ -22,6 +22,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mxw/vim-prolog'
 Plug 'luochen1990/rainbow'
 Plug 'Raimondi/delimitMate'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
