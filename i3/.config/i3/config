@@ -209,5 +209,5 @@ client.background       #2f343f
 # exec --no-startup-id xrandr --output Virtual-1 --mode 1680x1050
 exec picom -b
 exec feh --bg-fill /home/amos/Downloads/arch2.jpg
-
+exec pulseaudio -D
 
