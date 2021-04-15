@@ -144,6 +144,26 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# move floating windows with keys
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    bindsym h     move left
+    bindsym j     move down
+    bindsym k     move up
+    bindsym l     move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -207,7 +227,7 @@ client.placeholder		#2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background       #2f343f
 
 # exec --no-startup-id xrandr --output Virtual-1 --mode 1680x1050
-exec picom -b
-exec feh --bg-fill /home/amos/Downloads/arch2.jpg
-exec pulseaudio -D
+exec --no-startup-id picom -b
+exec --no-startup-id feh --bg-fill /home/amos/Downloads/arch2.jpg
+# exec --no-startup-id pulseaudio -D
 
