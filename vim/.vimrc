@@ -32,6 +32,7 @@ Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/tagbar'
 
 call plug#end()
 
@@ -72,8 +73,47 @@ inoremap <S-Tab> <C-d>
 " Init IDE with leader+n
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>m :FZF<CR>
+nnoremap <leader>, :TagbarToggle<CR>
 
 " NERDTee stuff
 let NERDTreeShowHidden=1
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Stuff for tagbar to work with vala
+let g:tagbar_ctags_bin = "anjuta-tags"
+let type_vala = {}
+let type_vala.ctagstype = 'vala'
+let type_vala.kinds = [
+ \ {'short' : 'c', 'long' : 'classes', 'fold' : 0},
+ \ {'short' : 'd', 'long' : 'delegates', 'fold' : 0},
+ \ {'short' : 'e', 'long' : 'enumerations', 'fold' : 0},
+ \ {'short' : 'E', 'long' : 'error domains', 'fold' : 0},
+ \ {'short' : 'f', 'long' : 'fields', 'fold' : 0},
+ \ {'short' : 'i', 'long' : 'interfaces', 'fold' : 0},
+ \ {'short' : 'm', 'long' : 'methods', 'fold' : 0},
+ \ {'short' : 'p', 'long' : 'properties', 'fold' : 0},
+ \ {'short' : 'r', 'long' : 'error codes', 'fold' : 0},
+ \ {'short' : 's', 'long' : 'structures', 'fold' : 0},
+ \ {'short' : 'S', 'long' : 'signals', 'fold' : 0},
+ \ {'short' : 'v', 'long' : 'enumeration values', 'fold' : 0}
+ \ ]
+let type_vala.sro = '.'
+let type_vala.kind2scope = {
+ \ 'i' : 'interface',
+ \ 'c' : 'class',
+ \ 's' : 'structure',
+ \ 'e' : 'enum'
+ \ }
+let type_vala.scope2kind = {
+ \ 'interface' : 'i',
+ \ 'class' : 'c',
+ \ 'struct' : 's',
+ \ 'enum' : 'e'
+ \ }
