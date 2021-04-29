@@ -2,9 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/amos/.oh-my-zsh"
+export USR_DIR="/home/amos"
+
+export ZSH=$USR_DIR"/.oh-my-zsh"
 export PATH=$PATH:/usr/local/go/bin
-export CODE_DIR="/home/amos/Documents/CodeProjects"
+export CODE_DIR=$USR_DIR"/Documents/CodeProjects"
+
 
 # To fix spacing issue with parrot theme
 export LC_ALL=en_US.UTF-8
@@ -108,4 +111,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias ll="ls -la"
 alias la="ls -a"
-alias code_dir="cd /home/amos/Documents/CodeProjects"
+alias code_dir="cd ~/Documents/CodeProjects"
+alias checkpatch="~/Documents/CodeProjects/C/LinuxKernel/staging/scripts/checkpatch.pl"
