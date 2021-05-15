@@ -1,8 +1,4 @@
 {
-    "languageserver": {
-        "vala": {
-            "command": "vala-language-server",
-            "filetypes": ["vala", "genie"]
-        }
-    }
+    "clangd.checkUpdates": true,
+    "clangd.path": "/home/amos/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
 }
