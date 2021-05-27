@@ -35,7 +35,7 @@ unset rc
 #         Styling           #
 #############################
 
-export PS1="\[\e[1;92m\u\e[1;96m@\e[1;92m\H:\e[1;95m\w\e[1;37m$\]\e[0:37m "
+export PS1="\[\e[1;92m\u\]\e[1;96m@\]\e[1;92m\H:\]\e[1;95m\w\]\e[1;37m$\]\e[0:37m\]\] "
 
 
 
@@ -56,3 +56,7 @@ cd()
     builtin cd $@
     ls
 }
+
+# Kernel development Aliases
+
+alias make_modules='make -C ~/Linux/linux/ M=`pwd` modules'
