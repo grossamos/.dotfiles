@@ -23,7 +23,7 @@ require("awful.hotkeys_popup.keys")
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
-                     title = "Oops, there were errors during startup!",
+                     title = "Oops, you fucked up the config!",
                      text = awesome.startup_errors })
 end
 
@@ -36,7 +36,7 @@ do
         in_error = true
 
         naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "Oops, an error happened!",
+                         title = "Oops, you fucked up!",
                          text = tostring(err) })
         in_error = false
     end)
@@ -45,7 +45,18 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+
+--local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "holo")
+--beautiful.init(theme_path)
+
+local xrandr = require("xrandr")
+
+beautiful.init("/home/amos/.config/awesome/themes/zenburn/theme.lua")
+
+--if not beautiful.init("/home/amos/.config/awesome/themes/gruvbox/theme.lua") then
+--    beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
+--end
+
 
 -- This is used later as the default terminal and editor to run.
 terminal = "gnome-terminal"
@@ -61,9 +72,9 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.spiral,
+    awful.layout.suit.tile,
+    --awful.layout.suit.spiral,
     awful.layout.suit.floating,
-    -- awful.layout.suit.tile,
     -- awful.layout.suit.tile.left,
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
@@ -203,16 +214,16 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
+        wibox.container.place(mytextclock, "center"),
         { -- Right widgets
+            wibox.widget.textbox("\t\t\t"),
+            require("battery-widget") {},
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            --mykeyboardlayout,
             wibox.widget.systray(),
-            mytextclock,
             s.mylayoutbox,
         },
     }
@@ -308,6 +319,9 @@ globalkeys = gears.table.join(
         end,
         {description = "move window down", group = "client"}),
 
+    -- Multi Monitor
+    awful.key({ modkey }, "u", function() xrandr.xrandr() end),
+
     -- Volume
 
     awful.key({ }, "XF86AudioRaiseVolume", function ()
@@ -323,7 +337,6 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn("firefox") end,
               {description = "open a terminal", group = "client"}),
-    -- awful.key({ modkey, "Shift   "}, "Return", function () awful.spawn()),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "Escape", awesome.quit,
@@ -362,7 +375,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
     awful.key({ modkey }, "d", function ()
-        awful.util.spawn("rofi -combi-modi window,drun,ssh -theme DarkBlue -font \"hack 10\" -show combi") end),
+        awful.util.spawn("rofi -combi-modi window,drun,ssh -theme gruvbox-dark -font \"hack 10\" -show combi") end),
 
     awful.key({ modkey }, "x",
               function ()
@@ -420,7 +433,41 @@ clientkeys = gears.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end ,
-        {description = "(un)maximize horizontally", group = "client"})
+        {description = "(un)maximize horizontally", group = "client"}),
+
+    -- Resizing
+    awful.key({ modkey, "Control" }, "Up", function (c)
+      if c.floating then
+          c:relative_move( 0, 0, 0, -10)
+      else
+        awful.client.incwfact(0.025)
+      end
+    end,
+    {description = "Floating Resize Vertical -", group = "client"}),
+    awful.key({ modkey, "Control" }, "Down", function (c)
+      if c.floating then
+        c:relative_move( 0, 0, 0,  10)
+      else
+        awful.client.incwfact(-0.025)
+      end
+    end,
+    {description = "Floating Resize Vertical +", group = "client"}),
+    awful.key({ modkey, "Control" }, "Left", function (c)
+      if c.floating then
+        c:relative_move( 0, 0, -10, 0)
+      else
+        awful.tag.incmwfact(-0.025)
+      end
+    end,
+    {description = "Floating Resize Horizontal -", group = "client"}),
+    awful.key({ modkey, "Control" }, "Right", function (c)
+      if c.floating then
+        c:relative_move( 0, 0,  10, 0)
+      else
+        awful.tag.incmwfact(0.025)
+      end
+    end,
+    {description = "Floating Resize Horizontal +", group = "client"})
 )
 
 -- Bind all key numbers to tags.
@@ -598,10 +645,10 @@ client.connect_signal("request::titlebars", function(c)
             layout  = wibox.layout.flex.horizontal
         },
         { -- Right
-            awful.titlebar.widget.floatingbutton (c),
+            --awful.titlebar.widget.floatingbutton (c),
             awful.titlebar.widget.maximizedbutton(c),
             awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
+            --awful.titlebar.widget.ontopbutton    (c),
             awful.titlebar.widget.closebutton    (c),
             layout = wibox.layout.fixed.horizontal()
         },
@@ -621,4 +668,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- autostart
 awful.spawn.with_shell("compton")
-awful.spawn.with_shell("feh --bg-fill ~/Downloads/bladeRunner.jpg")
+awful.spawn.with_shell("feh --bg-fill ~/Downloads/gruvbox.png")
