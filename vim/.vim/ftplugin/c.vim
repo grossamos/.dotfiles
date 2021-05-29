@@ -1,1 +1,1 @@
-au VimEnter * CocCommand clangd.install
+" au VimEnter * CocCommand clangd.install
