@@ -112,4 +112,17 @@ source $ZSH/oh-my-zsh.sh
 alias ll="ls -la"
 alias la="ls -a"
 alias code_dir="cd ~/Documents/CodeProjects"
+
+ # use ranger for navigation
+ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# ls after calling cd
+cd()
+{
+    builtin cd $@
+    ls
+}
+
+# Kernel development stuff
 alias checkpatch="~/Documents/CodeProjects/C/LinuxKernel/staging/scripts/checkpatch.pl"
+alias make_modules='make -C ~/Linux/linux/ M=`pwd` modules'
