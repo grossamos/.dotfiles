@@ -109,6 +109,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# if kube exists, do autocomplete:
+if command -v kubectl &> /dev/null
+then
+    source <(kubectl completion zsh)
+fi
+
 alias ll="ls -la"
 alias la="ls -a"
 alias code_dir="cd ~/Documents/CodeProjects"
