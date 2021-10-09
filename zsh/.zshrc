@@ -8,6 +8,9 @@ export ZSH=$USR_DIR"/.oh-my-zsh"
 export PATH=$PATH:/usr/local/go/bin
 export CODE_DIR=$USR_DIR"/Documents/CodeProjects"
 
+export VISUAL=nvim;
+export EDITOR=nvim;
+
 
 # To fix spacing issue with parrot theme
 export LC_ALL=en_US.UTF-8
@@ -109,6 +112,63 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# extract any archive
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b")
+
+function extract {
+ if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+    echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
+ else
+    for n in "$@"
+    do
+      if [ -f "$n" ] ; then
+          case "${n%,}" in
+            *.cbt|*.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar)
+                         tar xvf "$n"       ;;
+            *.lzma)      unlzma ./"$n"      ;;
+            *.bz2)       bunzip2 ./"$n"     ;;
+            *.cbr|*.rar)       unrar x -ad ./"$n" ;;
+            *.gz)        gunzip ./"$n"      ;;
+            *.cbz|*.epub|*.zip)       unzip ./"$n"       ;;
+            *.z)         uncompress ./"$n"  ;;
+            *.7z|*.arj|*.cab|*.cb7|*.chm|*.deb|*.dmg|*.iso|*.lzh|*.msi|*.pkg|*.rpm|*.udf|*.wim|*.xar)
+                         7z x ./"$n"        ;;
+            *.xz)        unxz ./"$n"        ;;
+            *.exe)       cabextract ./"$n"  ;;
+            *.cpio)      cpio -id < ./"$n"  ;;
+            *.cba|*.ace)      unace x ./"$n"      ;;
+            *)
+                         echo "extract: '$n' - unknown archive method"
+                         return 1
+                         ;;
+          esac
+      else
+          echo "'$n' - file does not exist"
+          return 1
+      fi
+    done
+fi
+}
+
+IFS=$SAVEIFS
+
+# usefull improvements to existing commands
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+alias df='df -h'
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+
+# insulter
+if [ -f /etc/bash.command-not-found ]; then
+    . /etc/bash.command-not-found
+fi
+
+
+
 # if kube exists, do autocomplete:
 if command -v kubectl &> /dev/null
 then
@@ -117,10 +177,11 @@ fi
 
 alias ll="ls -la"
 alias la="ls -a"
+# alias vim="nvim"
 alias code_dir="cd ~/Documents/CodeProjects"
 
- # use ranger for navigation
- alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# use ranger for navigation
+alias ranger='ranger --cmd="set show_hidden true" --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # ls after calling cd
 cd()
@@ -129,6 +190,8 @@ cd()
     ls
 }
 
+
 # Kernel development stuff
 alias checkpatch="~/Documents/CodeProjects/C/LinuxKernel/staging/scripts/checkpatch.pl"
-alias make_modules='make -C ~/Linux/linux/ M=`pwd` modules'
+alias make_modules='make -C ~/Documents/linux/linux M=`pwd` modules'
+alias qemu_run="~/Documents/linux/qemu/qemu_run.sh"
