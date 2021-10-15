@@ -42,7 +42,7 @@ bindsym $mod+Print exec gnome-screenshot -a
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -154,6 +154,10 @@ bindsym $mod+Shift+Escape exec dm-tool lock && systemctl suspend
 # enable and disable nightmode
 bindsym $mod+n exec --no-startup-id redshift -P -O 3700
 bindsym $mod+Shift+n exec --no-startup-id redshift -P -O 6500
+
+
+bindsym $mod+o exec --no-startup-id setxkbmap de
+bindsym $mod+Shift+o exec --no-startup-id setxkbmap us
 
 # change brightness
 bindsym XF86MonBrightnessUp exec light -A 10
