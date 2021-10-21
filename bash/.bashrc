@@ -61,6 +61,8 @@ cd()
     ls
 }
 
+
 # Kernel development Aliases
 
 alias make_modules='make -C ~/Linux/linux/ M=`pwd` modules'
+. "$HOME/.cargo/env"
