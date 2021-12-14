@@ -12,6 +12,16 @@ All Dotfiles, that I currently use to power my configs. This repo aims to improv
 - vim/nvim
 
 ## Setup
+### Zsh
+- install zsh and ohmyzsh (``sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"``)
+- install autocomplete: ``git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions``
+- delete default .zshrc and swap it out for my one: `stow zsh`
+### Kitty
+- stow configs: `stow kitty`
+### Qtile
+
+
+## Setup
 Make sure all the dependancies are installed.
 
 For zsh:
@@ -35,3 +45,7 @@ for awesomewm:
 
 - for the terminal remember to set the terminal color theme to aci (ex. with gogh https://github.com/Mayccoll/Gogh)
 
+For i3:
+- create symlinks: ``stow i3``
+- install: ``redshift``, ``playerctl``, ``light``, ``picom``, ``pactl``, ``feh``
+- place wallpaper as specified in the config
