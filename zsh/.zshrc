@@ -103,8 +103,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# use ranger for navigation
+alias ll='ls -lah'
+alias vim='nvim'
 
+# use ranger for navigation
 alias ranger='ranger --cmd="set show_hidden true" --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # ls after calling cd

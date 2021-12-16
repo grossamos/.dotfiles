@@ -18,7 +18,12 @@ All Dotfiles, that I currently use to power my configs. This repo aims to improv
 - delete default .zshrc and swap it out for my one: `stow zsh`
 ### Kitty
 - stow configs: `stow kitty`
-### Qtile
+- optionally stow ranger `stow ranger`
+### Sway
+- install sway, rofi, waybar
+- stow cofigs: `stow rofi && stow sway && stow waybar`
+- clone `https://github.com/moverest/sway-interactive-screenshot` to `~/Documents/shell` 
+- launch into sway
 
 
 ## Setup
