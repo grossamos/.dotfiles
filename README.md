@@ -3,7 +3,7 @@
 ## Description
 All Dotfiles, that I currently use to power my configs. This repo aims to improve sharing of it and usage across multiple systems.
 
-[ultra rice](./.github/images/screenshot.png)
+![ultra rice](./.github/images/screenshot.png)
 
 ## Dependencies
 - zsh (oh-my-zsh)
