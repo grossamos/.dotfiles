@@ -91,3 +91,6 @@
 [[layers]]
   name = "lang#python"
 
+[[layers]]
+name = "fzf"
+
