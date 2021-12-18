@@ -27,4 +27,10 @@ All Dotfiles, that I currently use to power my configs. This repo aims to improv
 - stow cofigs: `stow rofi && stow sway && stow waybar`
 - clone `https://github.com/moverest/sway-interactive-screenshot` to `~/Documents/shell` 
 - launch into sway
+### Vim
+- these dotfiles are only compatible with neovim 0.6.0 and above
+- install `ripgrep` for livegrep with telescope
+- stow the configs `stow nvim`
+- in nvim install the language servers: `:LspInstall clangd`
+- install `rust-analyzer` for rust (`rustup component add rls rust-analysis rust-src`) and then install rust-analzer as seen [here](https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary)
 
