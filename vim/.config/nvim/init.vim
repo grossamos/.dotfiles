@@ -56,6 +56,9 @@ Plug 'vim-scripts/AutoClose'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
+
 call plug#end()
 
 " Run PlugInstall at startup
@@ -95,6 +98,7 @@ endfunction
 " autocomplete
 lua <<EOF
   local cmp = require'cmp'
+  local luasnip = require 'luasnip'
 
   local on_attach = function(client, bufnr)
       local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -130,7 +134,7 @@ lua <<EOF
   cmp.setup({
     snippet = {
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        require('luasnip').lsp_expand(args.body)
       end,
     },
     mapping = {
@@ -156,8 +160,6 @@ lua <<EOF
         ['<S-Tab>'] = function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
-          elseif luasnip.jumpable(-1) then
-            luasnip.jump(-1)
           else
             fallback()
           end
@@ -165,7 +167,7 @@ lua <<EOF
       },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
+      { name = 'luasnip' },
       { name = 'path'},
     }, {
       { name = 'buffer' },
@@ -205,7 +207,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-lua require('telescope').setup{  defaults = { file_ignore_patterns = { "node_modules", ".git" }} }
+lua require('telescope').setup{  defaults = { file_ignore_patterns = { "node_modules", ".git", "target" }} }
 
 " file tree
 nnoremap <leader>ft :NERDTreeToggle<CR>
