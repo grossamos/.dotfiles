@@ -55,6 +55,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-scripts/AutoClose'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'mkitt/tabline.vim'
 
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
@@ -90,6 +91,8 @@ function! LightlineLineinfo() abort
     let l:lineinfo = ' ' . l:current_line . '/' . l:max_line
     return l:lineinfo
 endfunction
+
+let g:airline#extensions#tabline#enabled = 1
 
 " -------------------------------
 "        IDE functionality
@@ -224,6 +227,12 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" buffers
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bp :bp<cr>
+nnoremap <leader>bd :bd<cr>
+nnoremap <leader>bl :ls<cr>
 
 " -------------------------------
 "             Other
