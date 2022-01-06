@@ -91,8 +91,12 @@ bindsym XF86MonBrightnessDown exec sudo light -U 1
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Oi cunt, you really wanna exit sway?' -b 'Yes, daddy' 'swaymsg exit'
 
 # monitors
-output HDMI-A-1 pos 1920 0
-output eDP-1 pos 0 0
+#output HDMI-A-1 pos 1920 0
+#output eDP-1 pos 0 0
+
+# other way around:
+output HDMI-A-1 pos 0 0
+output eDP-1 pos 1920 0
 
 #
 # Moving around:
