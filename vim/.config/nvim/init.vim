@@ -42,6 +42,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'hrsh7th/cmp-vsnip'
+Plug 'evansalter/vim-checklist'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -56,6 +57,7 @@ Plug 'vim-scripts/AutoClose'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'mkitt/tabline.vim'
+Plug 'bling/vim-bufferline'
 
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
@@ -220,6 +222,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 nmap <leader>; <plug>NERDCommenterToggle
 xmap <leader>; <plug>NERDCommenterToggle
 
+"checklists
+nmap <leader>x :ChecklistToggleCheckbox<cr>
+
 " move lines up and down
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -229,6 +234,8 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " buffers
+let g:bufferline_show_bufnr = 0
+
 nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>bd :bd<cr>
