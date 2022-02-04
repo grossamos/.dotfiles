@@ -66,3 +66,5 @@ cd()
 
 alias make_modules='make -C ~/Linux/linux/ M=`pwd` modules'
 . "$HOME/.cargo/env"
+
+export TERM=xterm

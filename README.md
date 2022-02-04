@@ -19,18 +19,23 @@ All Dotfiles, that I currently use to power my configs. This repo aims to improv
 - delete default .zshrc and swap it out for my one: `stow zsh`
 - set zsh as your default shell
 ### Kitty
+- install kitty and the noto fonts
 - stow configs: `stow kitty`
 - optionally stow ranger `stow ranger`
 ### Sway
 - configure kitty as explained above
 - install sway, rofi, waybar
+- install the nessicary fonts: 
 - stow cofigs: `stow rofi && stow sway && stow waybar`
-- clone `https://github.com/moverest/sway-interactive-screenshot` to `~/Documents/shell` 
+- clone `https://github.com/moverest/sway-interactive-screenshot` to `~/Downloads/shell` 
 - launch into sway
+- install util applications: swaylock, playerctl, brightnessctl
 ### Vim
 - these dotfiles are only compatible with neovim 0.6.0 and above
 - install `ripgrep` and `fzf` for livegrep with telescope
 - stow the configs `stow nvim`
 - in nvim install the language servers: `:LspInstall clangd`
 - install `rust-analyzer` for rust (`rustup component add rls rust-analysis rust-src`) and then install rust-analzer as seen [here](https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary)
-
+### Ranger
+- stow configs: `stow ranger`
+- install ranger

@@ -205,6 +205,18 @@ lua <<EOF
       debounce_text_changes = 150,
     }
   }
+  require('lspconfig').texlab.setup{
+    settings = {
+        texlab = {
+          build = {
+            args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+            executable = "latexmk",
+            forwardSearchAfter = false,
+            onSave = true
+          },
+        }
+      }
+    }
 EOF
 
 " fuzzy find
