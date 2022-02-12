@@ -35,7 +35,7 @@ All Dotfiles, that I currently use to power my configs. This repo aims to improv
 - install `ripgrep` and `fzf` for livegrep with telescope
 - stow the configs `stow nvim`
 - in nvim install the language servers: `:LspInstall clangd`
-- install `rust-analyzer` for rust (`rustup component add rls rust-analysis rust-src`) and then install rust-analzer as seen [here](https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary)
+- install `rust analyzer` for rust (`rustup component add rls rust-analysis rust-src`), more information on this can be found [here](https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary)
 ### Ranger
 - stow configs: `stow ranger`
 - install ranger

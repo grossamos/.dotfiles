@@ -119,7 +119,6 @@ cd()
 # zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=0'
 
-
 # Kernel development stuff
 alias checkpatch="~/Documents/CodeProjects/C/LinuxKernel/staging/scripts/checkpatch.pl"
 alias make_modules='make -C ~/Documents/linux/linux M=`pwd` modules'
