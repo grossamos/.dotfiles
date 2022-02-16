@@ -217,6 +217,7 @@ lua <<EOF
         }
       }
     }
+  require('lspconfig').clangd.setup{}
 EOF
 
 " fuzzy find
