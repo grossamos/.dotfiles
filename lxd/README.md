@@ -66,8 +66,21 @@ echo "export WAYLAND_DISPLAY=wayland-0" >> ~/.profile
 echo "export QT_QPA_PLATFORM=wayland" >> ~/.profile
 ```
 
+Then reload .profile with:
+```bash
+. .profile
+```
+
 When binding to home directory, don't forget t delete `.profile` before rebooting!
+
+## Potential issues
+If docker and lxd are installed on the same system, you might need to flush iptables to not face network issues:
+```bash
+iptables -F FORWARD
+iptables -P FORWARD ACCEPT
+```
 
 ## Sources
 - https://tribaal.io/nicer-mounting-home-in-lxd.html
 - https://wiki.archlinux.org/title/LXD
+- https://github.com/docker/for-linux/issues/103
