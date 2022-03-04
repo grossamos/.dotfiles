@@ -45,10 +45,10 @@ Add the following devices:
 ```yaml
 mygpu:
    type: gpu
-Waylandsocket:
+Xsocket:
     bind: container
-    connect: unix:/run/user/1000/wayland-0
-    listen: unix:/mnt/wayland1/wayland-0
+    connect: unix:/tmp/.X11-unix/X0
+    listen: unix:/mnt/xorg1/X0
     uid: "1000"
     gid: "1000"
     security.gid: "1000"
@@ -57,21 +57,15 @@ Waylandsocket:
     type: proxy
 ```
 
-Run the script `init_wayland.sh` in the container.
+Make sure you create the actual folder in `/mnt/xorg1` first!
 
-Adjust display numbers, etc. accordingly:
+Run the following commands:
 ```bash
-echo "export XDG_RUNTIME_DIR=/run/user/1000" >> ~/.profile
-echo "export WAYLAND_DISPLAY=wayland-0" >> ~/.profile
-echo "export QT_QPA_PLATFORM=wayland" >> ~/.profile
+ln -s /mnt/xorg1/X0 /tmp/.X11-unix/X0 # optional
+export DISPLAY=:0
 ```
 
-Then reload .profile with:
-```bash
-. .profile
-```
-
-When binding to home directory, don't forget t delete `.profile` before rebooting!
+Now install xorg (usually installing some gui application should be enough).
 
 ## Potential issues
 If docker and lxd are installed on the same system, you might need to flush iptables to not face network issues:
