@@ -39,3 +39,9 @@ All Dotfiles, that I currently use to power my configs. This repo aims to improv
 ### Ranger
 - stow configs: `stow ranger`
 - install ranger
+
+## Server Setup
+### Debian
+- make sure git is installed
+- clone this repo
+- run ``./scripts/debian.sh``
