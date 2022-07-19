@@ -104,7 +104,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ll='ls -lah'
-alias vim='nvim'
+if type "nvim" > /dev/null; then
+  alias vim='nvim'
+fi
+
+if type "bat" > /dev/null; then
+  alias cat='bat --theme="Nord"'
+fi
+
+if type "direnv" > /dev/null; then
+    eval "$(direnv hook zsh)"
+fi
 
 # use ranger for navigation
 alias ranger='ranger --cmd="set show_hidden true" --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
@@ -117,9 +127,21 @@ cd()
 }
 
 # zsh-autosuggestions
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=0'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 # Kernel development stuff
 alias checkpatch="~/Documents/CodeProjects/C/LinuxKernel/staging/scripts/checkpatch.pl"
 alias make_modules='make -C ~/Documents/linux/linux M=`pwd` modules'
 alias qemu_run="~/Documents/linux/qemu/qemu_run.sh"
+
+# lxc stuff
+lxc-run() 
+{
+   lxc exec $1 -- sh -c "cd /home/amos/code && PULSE_SERVER=unix:/mnt/pulse TERM=xterm-256color DISPLAY=:0 su amos"
+}
+
+# kitty ssh fix
+
+if [ "$TERM" = "xterm-kitty" ]; then
+    alias ssh_k="kitty +kitten ssh"
+fi

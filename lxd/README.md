@@ -67,6 +67,36 @@ export DISPLAY=:0
 
 Now install xorg (usually installing some gui application should be enough).
 
+## Binding to pulse audio
+Add the following config:
+
+```yaml
+PulseSocket1:
+  bind: container
+  connect: unix:/run/user/1000/pulse/native
+  gid: "1000"
+  listen: unix:/mnt/pulse
+  mode: "0777"
+  security.gid: "1000"
+  security.uid: "1000"
+  type: proxy
+  uid: "1000"
+```
+
+And export the pulse server as such:
+
+```bash
+export PULSE_SERVER=unix:/mnt/pulse
+```
+
+## Binding to camera
+
+Run the following command:
+
+```bash
+lxc config device add test-arch video0 unix-char path=/dev/video0
+```
+
 ## Potential issues
 If docker and lxd are installed on the same system, you might need to flush iptables to not face network issues:
 ```bash

@@ -100,6 +100,12 @@ let g:airline#extensions#tabline#enabled = 1
 "        IDE functionality
 " -------------------------------
 
+"  Unmap annoying keybinds
+map K <cmd>lua vim.lsp.buf.hover()<CR>
+map <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
+map <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+map <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+
 " autocomplete
 lua <<EOF
   local cmp = require'cmp'
@@ -218,6 +224,33 @@ lua <<EOF
       }
     }
   require('lspconfig').clangd.setup{}
+
+  local project_library_path = "/usr/lib/node_modules"
+  local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
+
+    require'lspconfig'.angularls.setup{
+      cmd = cmd,
+      on_new_config = function(new_config,new_root_dir)
+        new_config.cmd = cmd
+      end,
+    }
+
+  require'lspconfig'.tsserver.setup{}
+
+  local capabilities_css = vim.lsp.protocol.make_client_capabilities()
+  capabilities_css.textDocument.completion.completionItem.snippetSupport = true
+
+  require'lspconfig'.cssls.setup {
+    capabilities = capabilities_css,
+  }
+
+  local capabilities_html = vim.lsp.protocol.make_client_capabilities()
+  capabilities_html.textDocument.completion.completionItem.snippetSupport = true
+
+  require'lspconfig'.html.setup {
+    capabilities = capabilities_html,
+  }
+  require'lspconfig'.gopls.setup{}
 EOF
 
 " fuzzy find
@@ -233,6 +266,7 @@ nnoremap <leader>ft :NERDTreeToggle<CR>
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " comments
+let g:NERDCreateDefaultMappings = 0
 nmap <leader>; <plug>NERDCommenterToggle
 xmap <leader>; <plug>NERDCommenterToggle
 
@@ -246,6 +280,10 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" move up and down when having line wraps
+noremap <silent> k gk
+noremap <silent> j gj
 
 " buffers
 let g:bufferline_show_bufnr = 0
