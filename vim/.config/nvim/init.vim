@@ -62,6 +62,8 @@ Plug 'bling/vim-bufferline'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 
+Plug 'LnL7/vim-nix'
+
 call plug#end()
 
 " Run PlugInstall at startup
@@ -251,6 +253,8 @@ lua <<EOF
     capabilities = capabilities_html,
   }
   require'lspconfig'.gopls.setup{}
+
+  require'lspconfig'.rnix.setup{}
 EOF
 
 " fuzzy find

@@ -116,9 +116,6 @@ if type "direnv" > /dev/null; then
     eval "$(direnv hook zsh)"
 fi
 
-# use ranger for navigation
-alias ranger='ranger --cmd="set show_hidden true" --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
 # ls after calling cd
 cd()
 {
@@ -138,6 +135,18 @@ alias qemu_run="~/Documents/linux/qemu/qemu_run.sh"
 lxc-run() 
 {
    lxc exec $1 -- sh -c "cd /home/amos/code && PULSE_SERVER=unix:/mnt/pulse TERM=xterm-256color DISPLAY=:0 su amos"
+}
+
+# todo management
+
+cp-todo()
+{
+    cp $(date "+%Y-%m-%d.md" --date=$1) $(date "+%Y-%m-%d.md") -v
+}
+
+edit-todo()
+{
+    $EDITOR $(date "+%Y-%m-%d.md")
 }
 
 # kitty ssh fix
