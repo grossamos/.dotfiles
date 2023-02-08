@@ -66,6 +66,9 @@ Plug 'LnL7/vim-nix'
 
 call plug#end()
 
+set undodir=~/.nvim/undodir
+set undofile
+
 " Run PlugInstall at startup
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
@@ -205,7 +208,7 @@ lua <<EOF
   })
 
   -- Setup lspconfig
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
   require('lspconfig').rust_analyzer.setup {
     capabilities = capabilities,
     on_attach = on_attach,

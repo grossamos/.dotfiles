@@ -154,3 +154,5 @@ edit-todo()
 if [ "$TERM" = "xterm-kitty" ]; then
     alias ssh_k="kitty +kitten ssh"
 fi
+
+export PATH=$PATH:~/.local/bin:~/go/bin
