@@ -37,7 +37,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -77,7 +77,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " -------------------------------
 "          Look and feel
 " -------------------------------
-colorscheme nord
+colorscheme gruvbox
 set cmdheight=1
 
 let mapleader=" "
