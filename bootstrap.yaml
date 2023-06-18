@@ -1,0 +1,52 @@
+---
+- name: Bootstrap .dotfiles
+  hosts: localhost
+
+  tasks:
+    - name: Check if distro is Silverblue 
+      shell:
+        cmd: rpm-ostree --version
+      register: sb_result
+      check_mode: false
+      changed_when: false
+      failed_when: sb_result.rc != 0 and sb_result.rc != 127
+    - name: Install necessary packages for Silverblue
+      community.general.rpm_ostree_pkg:
+        name: 
+          - zsh
+          - neovim
+          - screen
+          - ranger
+          - podman
+          - fzf
+        state: present
+      when: "'command not found' not in sb_result.stderr"
+    - name: Install necessary packages for Fedora
+      ansible.builtin.dnf:
+        name:
+          - zsh
+          - neovim
+          - screen
+          - ranger
+          - podman
+          - fzf
+        state: present
+      when: ansible_distribution == 'Fedora' and 'command not found' in sb_result.stderr
+      become: yes
+    - name: Create cfg dir
+      file:
+        path: ~/.config
+        state: directory
+    - name: Symlink config
+      file:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        state: link
+      loop:
+        - { src: '~/.dotfiles/vim/.config/nvim', dest: '~/.config/nvim' }
+        - { src: '~/.dotfiles/zsh/.zshrc', dest: '~/.zshrc' }
+    - name: Change default shell
+      ansible.builtin.user:
+        shell: /bin/zsh
+        name: amos
+      become: yes
