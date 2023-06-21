@@ -21,5 +21,6 @@ python3 -m pip install --user ansible
 
 Runs Ansible Setup:
 ```bash
+ansible-galaxy collection install community.general
 ansible-playboot bootstrap.yaml --ask-become-pass
 ```
