@@ -3,8 +3,11 @@ export ZSH="/home/amos/.zsh"
 export VISUAL=nvim;
 export EDITOR=nvim;
 
-[[ -r ~/.zsh/antigen.zsh ]] ||
+if [ ! -f "~/.zsh/antigen.zsh" ]; then
+    echo "Downloading Antigen..."
+    mkdir .zsh
     curl -L git.io/antigen > ~/.zsh/antigen.zsh
+fi
 source ~/.zsh/antigen.zsh
 
 antigen use oh-my-zsh
