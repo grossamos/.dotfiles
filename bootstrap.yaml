@@ -37,12 +37,18 @@
       ansible.builtin.apt:
         name:
           - zsh
-          - neovim
           - screen
           - ranger
           - podman
           - fzf
         state: present
+      when: ansible_distribution_file_variety == 'Debian'
+      become: yes
+    - name: Install neovim on Debian
+      ansible.builtin.shell: |
+        cd $(mktemp -d)
+        wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.deb
+        apt install ./nvim-linux64.deb
       when: ansible_distribution_file_variety == 'Debian'
       become: yes
     - name: Create cfg dir
@@ -57,8 +63,7 @@
       loop:
         - { src: '~/.dotfiles/vim/.config/nvim', dest: '~/.config/nvim' }
         - { src: '~/.dotfiles/zsh/.zshrc', dest: '~/.zshrc' }
-    - name: Change default shell
-      ansible.builtin.user:
-        shell: /bin/zsh
-        name: amos
-      become: yes
+    - name: Set login shell of user {{ ansible_env.USER }} to `/bin/zsh` with `usermod`
+      ansible.builtin.command: usermod --shell /bin/zsh {{ ansible_env.USER }}
+      become: true
+      changed_when: false
