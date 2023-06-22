@@ -47,10 +47,9 @@
     - name: Install neovim on Debian
       ansible.builtin.shell: |
         cd $(mktemp -d)
-        wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.deb
-        apt install ./nvim-linux64.deb
+        wget -O ~/.bin/nvim https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
+        chmod u+x nvim
       when: ansible_distribution_file_variety == 'Debian'
-      become: yes
     - name: Create cfg dir
       file:
         path: ~/.config
