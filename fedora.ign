@@ -1,0 +1,27 @@
+{
+  "ignition": {
+    "version": "3.3.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICu25yA7t9IUK1hfAESHsONW8sW5dPBeip67fZS4YE3d amos@arch"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/hostname",
+        "contents": {
+          "compression": "",
+          "source": "data:,netcup"
+        },
+        "mode": 420
+      }
+    ]
+  }
+}
