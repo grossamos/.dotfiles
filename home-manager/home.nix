@@ -36,6 +36,7 @@
       sudo nixos-rebuild switch --flake .
       gen=$(nixos-rebuild list-generations | grep current)
       git commit -am "$gen"
+      git push
       popd
     '')
     # # Adds the 'hello' command to your environment. It prints a friendly
