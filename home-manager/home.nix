@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
-
 {
-
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../git
   ];
@@ -25,13 +26,14 @@
   home.packages = [
     pkgs.neofetch
     pkgs.ungoogled-chromium
+    pkgs.ranger
     pkgs.alejandra
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
-      push ~/.dotfiles
+      pushd ~/.dotfiles
       alejandra . &>/dev/null
       git diff -U0 *.nix
-      nixos-rebuild switch --flake .
+      sudo nixos-rebuild switch --flake .
       gen=$(nixos-rebuild list-generations | grep current)
       git commit -am "$gen"
       popd
@@ -86,7 +88,7 @@
   #  /etc/profiles/per-user/amos/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

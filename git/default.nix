@@ -1,8 +1,12 @@
-{
+{pkgs, ...}: {
   programs.git = {
     enable = true;
     userName = "grossamos";
     userEmail = "email@amosgross.com";
-    config.credential.helper = "libsecret";
+    extraConfig = {
+      credential.helper = "${
+        pkgs.git.override {withLibsecret = true;}
+      }/bin/git-credential-libsecret";
+    };
   };
 }

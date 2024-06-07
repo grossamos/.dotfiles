@@ -1,14 +1,15 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -81,9 +82,9 @@
   users.users.amos = {
     isNormalUser = true;
     description = "amos";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -94,13 +95,13 @@
   nixpkgs.config.allowUnfree = true;
 
   # rebuild-nix-script = pkgs.writeShellScriptBin "rebuild-nix" ''
-   #    echo "rebuilding nix"
-    #   push /etc/nixos/
-     #  git add .
-      # git commit -m
-      # Note writeShellScriptBin vs writeScriptBin -- that'll put a hashbang to the current shell the first line
-      # You can also put your bash code inline here, too, instead of loading a file
-      # Note writeShellScriptBin vs writeScriptBin -- that'll put a hashbang to the current shell the first line
+  #    echo "rebuilding nix"
+  #   push /etc/nixos/
+  #  git add .
+  # git commit -m
+  # Note writeShellScriptBin vs writeScriptBin -- that'll put a hashbang to the current shell the first line
+  # You can also put your bash code inline here, too, instead of loading a file
+  # Note writeShellScriptBin vs writeScriptBin -- that'll put a hashbang to the current shell the first line
   # '';
 
   # List packages installed in system profile. To search, run:
@@ -108,8 +109,8 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -139,6 +140,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 }
