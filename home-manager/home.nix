@@ -5,6 +5,7 @@
 }: {
   imports = [
     ../git
+    #    ../gnome
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -27,6 +28,8 @@
     pkgs.neofetch
     pkgs.ungoogled-chromium
     pkgs.ranger
+    pkgs.dconf
+    pkgs.spotify
     pkgs.alejandra
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
