@@ -7,6 +7,9 @@
       credential.helper = "${
         pkgs.git.override {withLibsecret = true;}
       }/bin/git-credential-libsecret";
+      pull.rebase = "false";
+      init.defaultBranch = "main";
+      core.editor = "lvim";
     };
   };
 }
