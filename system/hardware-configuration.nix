@@ -16,6 +16,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
+  boot.supportedFilesystems = ["ntfs"];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/a71bc268-cedd-4d18-9513-aa5fbce2e276";
