@@ -27,7 +27,7 @@
     pkgs.neofetch
     pkgs.ungoogled-chromium
     pkgs.ranger
-    pkgs.podman
+    pkgs.postman
     pkgs.dconf
     pkgs.spotify
     pkgs.alejandra
