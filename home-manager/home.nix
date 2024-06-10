@@ -31,6 +31,7 @@
     pkgs.dconf
     pkgs.spotify
     pkgs.alejandra
+    pkgs.protonvpn-gui
     pkgs.lunarvim
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
