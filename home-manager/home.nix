@@ -32,6 +32,7 @@
     pkgs.spotify
     pkgs.alejandra
     pkgs.protonvpn-gui
+    pkgs.wireshark
     pkgs.lunarvim
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
