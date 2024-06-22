@@ -33,6 +33,7 @@
     pkgs.alejandra
     pkgs.protonvpn-gui
     pkgs.wireshark
+    pkgs.gnome.dconf-editor
     pkgs.lunarvim
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
