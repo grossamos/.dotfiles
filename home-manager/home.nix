@@ -29,7 +29,7 @@
     pkgs.ranger
     pkgs.postman
     pkgs.dconf
-    pkgs.python312Packages.openrazer
+    pkgs.polychromatic
     pkgs.spotify
     pkgs.alejandra
     pkgs.protonvpn-gui
