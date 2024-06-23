@@ -60,6 +60,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  hardware.openrazer.enable = true;
+  hardware.openrazer.users = ["amos"];
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
