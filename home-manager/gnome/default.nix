@@ -25,7 +25,7 @@
       switch-to-application-7 = [];
       switch-to-application-8 = [];
       switch-to-application-9 = [];
-      open-new-window-application-1 = ["<Super><Shift><Enter>"];
+      open-new-window-application-1 = ["<Super><Shift><Return>"];
       open-new-window-application-2 = ["<Super><Enter>"];
     };
     "org/gnome/desktop/wm/keybindings" = {
