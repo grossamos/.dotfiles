@@ -15,7 +15,7 @@
       picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/pills-l.jxl";
       picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/pills-d.jxl";
     };
-    "org.gnome.shell.keybindings" = {
+    "org/gnome/shell/keybindings" = {
       switch-to-application-1 = ["<Super><Shift><Enter>"];
       switch-to-application-2 = ["<Super><Enter>"];
       switch-to-application-3 = [];
