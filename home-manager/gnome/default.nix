@@ -25,8 +25,11 @@
       switch-to-application-7 = [];
       switch-to-application-8 = [];
       switch-to-application-9 = [];
+
       open-new-window-application-1 = ["<Super><Shift>Return"];
       open-new-window-application-2 = ["<Super>Return"];
+
+      screensaver = ["<Super>q"];
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-left = ["<Super>Left"];
@@ -56,7 +59,6 @@
       move-to-workspace-10 = ["<Super><Shift>0"];
 
       close = ["<Super><Shift>q"];
-      screensaver = ["<Super>q"];
     };
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-left = ["<Super>j"];
