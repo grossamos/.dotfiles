@@ -57,7 +57,7 @@
       toggle-tiled-left = ["<Super>j"];
       toggle-tiled-right = ["Super>k"];
     };
-    "org/gnome/desktop/wm/preferences " = {
+    "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 10;
     };
   };
