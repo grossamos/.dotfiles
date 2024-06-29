@@ -25,12 +25,14 @@
       switch-to-application-7 = [];
       switch-to-application-8 = [];
       switch-to-application-9 = [];
-      switch-to-workspace-left = ["<Super>Left"];
-      switch-to-workspace-right = ["<Super>right"];
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-left = ["<Super>Left"];
       switch-to-workspace-right = ["<Super>right"];
+    };
+    "org/gnome/mutter/keybindings/toggle-tiled-left" = {
+      toggle-tiled-left = ["<Super>j"];
+      toggle-tiled-right = ["Super>k"];
     };
   };
   #   "org/gnome/desktop/wm/keybindings" = {
