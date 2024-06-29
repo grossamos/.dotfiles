@@ -38,7 +38,7 @@
       switch-to-workspace-7 = ["<Super>7"];
       switch-to-workspace-8 = ["<Super>8"];
       switch-to-workspace-9 = ["<Super>9"];
-      switch-to-workspace-10 = ["<Super>10"];
+      switch-to-workspace-10 = ["<Super>0"];
 
       move-to-workspace-left = ["<Super><Shift>Left"];
       move-to-workspace-right = ["<Super><Shift>right"];
