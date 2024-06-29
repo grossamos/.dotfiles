@@ -28,8 +28,6 @@
 
       open-new-window-application-1 = ["<Super><Shift>Return"];
       open-new-window-application-2 = ["<Super>Return"];
-
-      # screensaver = ["<Super>q"];
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-left = ["<Super>Left"];
@@ -66,6 +64,9 @@
     };
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 10;
+    };
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      screensaver = ["<Super>q"];
     };
   };
 }
