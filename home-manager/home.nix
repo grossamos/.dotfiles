@@ -34,6 +34,8 @@
     pkgs.wireshark
     pkgs.gnome.dconf-editor
     pkgs.lunarvim
+    pkgs.obsidian
+    pkgs.nextcloud-client
     pkgs.libreoffice-still
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
