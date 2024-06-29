@@ -25,6 +25,7 @@
   # environment.
   home.packages = [
     pkgs.neofetch
+    pkgs.tmux
     pkgs.ungoogled-chromium
     pkgs.ranger
     pkgs.postman
