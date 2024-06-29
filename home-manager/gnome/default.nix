@@ -15,14 +15,20 @@
       picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/pills-l.jxl";
       picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/pills-d.jxl";
     };
+    "org.gnome.shell.keybindings" = {
+      switch-to-application-1 = "<Super><Shift><Enter>";
+      switch-to-application-2 = "<Super><Enter>";
+      switch-to-application-3 = "";
+      switch-to-application-4 = "";
+      switch-to-application-5 = "";
+      switch-to-application-6 = "";
+      switch-to-application-7 = "";
+      switch-to-application-8 = "";
+      switch-to-application-9 = "";
+      switch-to-workspace-left = "<Super>Left";
+      switch-to-workspace-right = "<Super>right";
+    };
   };
-  #   "org/gnome/desktop/interface" = {
-  #     enable-hot-corners = false;
-  #   };
-  #   "org/gnome/desktop/background" = {
-  #     picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/pills-l.jxl";
-  #     picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/pills-d.jxl";
-  #   };
   #   "org/gnome/desktop/wm/keybindings" = {
   #     "switch-to-workspace-1" = ["<Super>1"];
   #     "switch-to-workspace-2" = ["<Super>2"];
