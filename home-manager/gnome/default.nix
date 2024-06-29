@@ -30,7 +30,7 @@
       switch-to-workspace-left = ["<Super>Left"];
       switch-to-workspace-right = ["<Super>right"];
     };
-    "org/gnome/mutter/keybindings/toggle-tiled-left" = {
+    "org/gnome/mutter/keybindings" = {
       toggle-tiled-left = ["<Super>j"];
       toggle-tiled-right = ["Super>k"];
     };
