@@ -16,8 +16,8 @@
       picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/pills-d.jxl";
     };
     "org/gnome/shell/keybindings" = {
-      switch-to-application-1 = ["<Super><Shift><Enter>"];
-      switch-to-application-2 = ["<Super><Enter>"];
+      switch-to-application-1 = [];
+      switch-to-application-2 = [];
       switch-to-application-3 = [];
       switch-to-application-4 = [];
       switch-to-application-5 = [];
@@ -25,6 +25,10 @@
       switch-to-application-7 = [];
       switch-to-application-8 = [];
       switch-to-application-9 = [];
+      switch-to-workspace-left = ["<Super>Left"];
+      switch-to-workspace-right = ["<Super>right"];
+    };
+    "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-left = ["<Super>Left"];
       switch-to-workspace-right = ["<Super>right"];
     };
