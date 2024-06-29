@@ -40,6 +40,7 @@
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
       pushd ~/.dotfiles
+      nix flake update
       alejandra . &>/dev/null
       git diff -U0 *.nix
       sudo nixos-rebuild switch --flake .
