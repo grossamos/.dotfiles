@@ -51,7 +51,7 @@
       move-to-workspace-7 = ["<Super><Shift>7"];
       move-to-workspace-8 = ["<Super><Shift>8"];
       move-to-workspace-9 = ["<Super><Shift>9"];
-      move-to-workspace-10 = ["<Super><Shift>10"];
+      move-to-workspace-10 = ["<Super><Shift>0"];
     };
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-left = ["<Super>j"];
