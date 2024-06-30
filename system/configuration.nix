@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -136,6 +137,19 @@
         sansSerif = ["Noto Sans" "Source Han Sans"];
       };
     };
+  };
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--no-write-lock-file"
+      "-L"
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
