@@ -25,6 +25,7 @@
     pkgs.tmux
     pkgs.ungoogled-chromium
     pkgs.ranger
+    pkgs.signal-desktop
     pkgs.postman
     pkgs.dconf
     pkgs.polychromatic
