@@ -22,6 +22,7 @@
   # environment.
   home.packages = [
     pkgs.neofetch
+    pkgs.vulnix
     pkgs.tmux
     pkgs.ungoogled-chromium
     pkgs.ranger
