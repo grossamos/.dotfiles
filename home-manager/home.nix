@@ -35,7 +35,7 @@
     pkgs.alejandra
     pkgs.protonvpn-gui
     pkgs.wireshark
-    pkgs.gnome.dconf-editor
+    pkgs.dconf-editor
     pkgs.lunarvim
     pkgs.obsidian
     pkgs.nextcloud-client
