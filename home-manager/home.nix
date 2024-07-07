@@ -25,6 +25,7 @@
     pkgs.vulnix
     pkgs.tmux
     pkgs.ungoogled-chromium
+    pkgs.syncthing
     pkgs.ranger
     pkgs.signal-desktop
     pkgs.postman
