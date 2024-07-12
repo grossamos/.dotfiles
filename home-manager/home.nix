@@ -28,6 +28,7 @@
     pkgs.syncthing
     pkgs.ranger
     pkgs.signal-desktop
+    pkgs.kitty
     pkgs.postman
     pkgs.dconf
     pkgs.polychromatic
