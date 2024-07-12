@@ -2,6 +2,7 @@
   imports = [
     ../git
     ./gnome
+    # ./hyprland
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -117,6 +118,8 @@
 
     bash.enable = true; # see note on other shells below
   };
+
+  # wayland.windowManager.hyprland.enable = true;
 
   # ...
 }

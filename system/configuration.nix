@@ -57,6 +57,8 @@
     xwayland.enable = true;
   };
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us,de";
@@ -67,6 +69,9 @@
 
   hardware.openrazer.enable = true;
   hardware.openrazer.users = ["amos"];
+
+  hardware.graphics.enable = true;
+  hardware.nvidia.modesetting.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -118,7 +123,15 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    # for my mouse
     openrazer-daemon
+    # for hyprland
+    rofi-wayland
+    waybar
+    dunst
+    kitty
+    libnotify
+    swww
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
@@ -156,6 +169,9 @@
     dates = "02:00";
     randomizedDelaySec = "45min";
   };
+
+  #xdg.portal.enable = true;
+  #xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
