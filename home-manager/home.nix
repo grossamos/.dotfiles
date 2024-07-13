@@ -28,6 +28,7 @@
     pkgs.ungoogled-chromium
     pkgs.syncthing
     pkgs.ranger
+    pkgs.android-tools
     pkgs.anki
     pkgs.signal-desktop
     pkgs.kitty
