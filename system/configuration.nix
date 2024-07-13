@@ -96,7 +96,7 @@
   users.users.amos = {
     isNormalUser = true;
     description = "amos";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "adbusers"];
     packages = with pkgs; [
       #  thunderbird
     ];
@@ -160,6 +160,8 @@
     dates = "02:00";
     randomizedDelaySec = "45min";
   };
+
+  programs.adb.enable = true;
 
   #xdg.portal.enable = true;
   #xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
