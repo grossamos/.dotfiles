@@ -125,15 +125,6 @@
     git
     # for my mouse
     openrazer-daemon
-    # for hyprland
-    rofi-wayland
-    waybar
-    dunst
-    kitty
-    libnotify
-    swww
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
   ];
 
   fonts = {
