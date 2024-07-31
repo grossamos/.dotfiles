@@ -27,27 +27,31 @@
           natural_scroll = true;
         };
         exec-once = [
-          "systemctl --user import-environment &"
-          "hash dbus-update-activation-environment 2>/dev/null &"
-          "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
-          "nm-applet &"
-          "wl-clip-persist --clipboard both"
-          "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
-          "hyprctl setcursor Nordzy-cursors 22 &"
-          "poweralertd &"
-          "waybar &"
-          "swaync &"
-          "wl-paste --watch cliphist store &"
           "hyprlock"
         ];
       };
       monitor = "eDP-1,1920x1080@60,0x0,1";
+      animations = {
+        enabled = 1;
+      };
       "$mod" = "SUPER";
       bind =
         [
           "SUPER_SHIFT, return, exec, firefox"
           "SUPER, return, exec, kitty"
+          "SUPER_SHIFT, Escape, exec, hyprctl dispatch exit 1"
+          "SUPER_SHIFT, R, exec, hyprctl reload"
           ", Print, exec, grimblast copy area"
+          "$mod, Escape, exec, swaylock"
+
+          "$mod, left, movefocus, l"
+          "$mod, right, movefocus, r"
+          "$mod, up, movefocus, u"
+          "$mod, down, movefocus, d"
+          "$mod, H, movefocus, l"
+          "$mod, L, movefocus, r"
+          "$mod, K, movefocus, u"
+          "$mod, J, movefocus, d"
         ]
         ++ (
           # workspaces
