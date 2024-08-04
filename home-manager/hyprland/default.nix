@@ -38,6 +38,8 @@
         enabled = 0;
       };
       general = {
+        layout = "dwindle";
+        force_split = "2";
         gaps_in = 5;
         gaps_out = 5;
         "col.active_border" = "#e57c91";
