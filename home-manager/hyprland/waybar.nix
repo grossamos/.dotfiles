@@ -19,13 +19,11 @@
       "clock"
     ];
     modules-right = [
-      "tray"
+      "pulseaudio"
+      "network"
       "cpu"
       "memory"
-      "disk"
-      "pulseaudio"
       "battery"
-      "network"
       "custom/notification"
     ];
     # clock = {
@@ -37,30 +35,15 @@
     #   tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
     #   format-alt = " {:%d/%m}";
     # };
-    # "hyprland/workspaces" = {
-    #   active-only = false;
-    #   disable-scroll = true;
-    #   format = "{icon}";
-    #   on-click = "activate";
-    #   format-icons = {
-    #     "1" = "󰈹";
-    #     "2" = "";
-    #     "3" = "󰘙";
-    #     "4" = "󰙯";
-    #     "5" = "";
-    #     "6" = "";
-    #     urgent = "";
-    #     default = "";
-    #     sort-by-number = true;
-    #   };
-    #   persistent-workspaces = {
-    #     "1" = [];
-    #     "2" = [];
-    #     "3" = [];
-    #     "4" = [];
-    #     "5" = [];
-    #   };
-    # };
+    "hyprland/workspaces" = {
+      disable-scroll = true;
+      on-click = "activate";
+      format-icons = {
+        urgent = "";
+        default = "";
+        sort-by-number = true;
+      };
+    };
     # memory = {
     #   format = "󰟜 {}%";
     #   format-alt = "󰟜 {used} GiB"; # 
