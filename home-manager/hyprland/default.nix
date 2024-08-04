@@ -1,12 +1,12 @@
 {pkgs, ...}: {
   imports = [
     ./hyprlock.nix
+    # ../kitty
   ];
   home.packages = with pkgs; [
     rofi-wayland # application launcher
     hyprlock # lock screen
     dunst # notification deamon
-    kitty
     eww
     libnotify
     swaybg # animated background
@@ -59,9 +59,6 @@
       decoration = {
         rounding = 10;
       };
-      windowrule = [
-        "opacity 0.75,^(kitty)$"
-      ];
       "$mod" = "SUPER";
       bind =
         [

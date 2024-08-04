@@ -32,7 +32,6 @@
     pkgs.android-tools
     pkgs.anki
     pkgs.signal-desktop
-    pkgs.kitty
     pkgs.postman
     pkgs.dconf
     pkgs.polychromatic
