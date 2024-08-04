@@ -6,7 +6,7 @@
     enable = true;
     settings.mainBar = {
       enable = true;
-      position = "bottom";
+      position = "top";
       layer = "top";
       height = 5;
       margin-top = 0;
@@ -29,7 +29,7 @@
         "custom/notification"
       ];
       "hyprland/workspaces" = {
-        active-only = false;
+        active-only = true;
         disable-scroll = true;
         format = "{icon}";
         on-click = "activate";
