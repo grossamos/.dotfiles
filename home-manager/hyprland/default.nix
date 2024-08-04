@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./hyprlock.nix
-    ../ags
+    ../waybar
   ];
   home.packages = with pkgs; [
     rofi-wayland # application launcher
@@ -34,7 +34,7 @@
         };
         exec-once = [
           "swaybg -i ~/.dotfiles/images/background.jpg &"
-          "ags -c ~/.dotfiles/home-manager/ags/config.js &"
+          "waybar &"
         ];
       };
       monitor = "eDP-1,1920x1080@60,0x0,1";
