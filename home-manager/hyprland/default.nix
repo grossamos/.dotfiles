@@ -39,11 +39,13 @@
       };
       general = {
         layout = "dwindle";
-        force_split = "2";
         gaps_in = 5;
-        gaps_out = 5;
+        gaps_out = 10;
         "col.active_border" = "#e57c91";
         "col.inactive_border" = "#aeb690";
+      };
+      dwindle = {
+        force_split = "2";
       };
       decoration = {
         rounding = 10;
