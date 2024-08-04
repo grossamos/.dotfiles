@@ -44,10 +44,8 @@
         border_size = 2;
         border_part_of_window = false;
         no_border_on_floating = false;
-        # "col.active_border" = "#e57c91";
-        # "col.inactive_border" = "#aeb690";
-        "col.active_border" = "rgb(cba6f7) rgb(94e2d5) 45deg";
-        "col.inactive_border" = "0x00000000";
+        "col.active_border" = "#e57c91ff";
+        "col.inactive_border" = "#aeb690ff";
       };
       dwindle = {
         force_split = "2";
@@ -62,9 +60,10 @@
           "SUPER, return, exec, kitty"
           "SUPER_SHIFT, Escape, exec, hyprctl dispatch exit 1"
           "SUPER_SHIFT, R, exec, hyprctl reload"
-          ", Print, exec, grimblast copy area"
-          "$mod, Escape, exec, hyprlock"
+          "SUPER_SHIFT, Q, killactive,"
           "$mod, Q, killactive,"
+          "$mod, Escape, exec, hyprlock"
+          ", Print, exec, grimblast copy area"
 
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
