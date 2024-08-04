@@ -35,7 +35,7 @@
         };
         exec-once = [
           "swaybg -i ~/.dotfiles/images/background.jpg &"
-          "ags &"
+          "ags -c ~/.dotfiles/home-manager/ags/config.js &"
         ];
       };
       monitor = "eDP-1,1920x1080@60,0x0,1";
