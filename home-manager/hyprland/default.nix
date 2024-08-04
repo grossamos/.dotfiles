@@ -41,6 +41,7 @@
         layout = "dwindle";
         gaps_in = 5;
         gaps_out = 10;
+        border_size = 2;
         "col.active_border" = "#e57c91";
         "col.inactive_border" = "#aeb690";
       };
