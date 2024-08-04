@@ -29,16 +29,31 @@
         "custom/notification"
       ];
       "hyprland/workspaces" = {
-        # active-only = false;
-        # disable-scroll = true;
+        active-only = false;
+        disable-scroll = true;
         format = "{icon}";
         on-click = "activate";
         format-icons = {
+          "1" = "󰲠";
+          "2" = "󰲢";
+          "3" = "󰲤";
+          "4" = "󰲦";
+          "5" = "󰲨";
+          "6" = "󰲪";
+          "7" = "󰲬";
+          "8" = "󰲮";
+          "9" = "󰲰";
+          "10" = "󰿬";
           urgent = "";
           default = "";
           empty = "";
-          sort-by-number = true;
         };
+        # format-icons = {
+        #   urgent = "";
+        #   default = "";
+        #   empty = "";
+        #   sort-by-number = true;
+        # };
       };
     };
   };
