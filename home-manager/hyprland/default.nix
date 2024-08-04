@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./hyprlock.nix
-    # ../kitty
   ];
   home.packages = with pkgs; [
     rofi-wayland # application launcher
