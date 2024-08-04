@@ -59,7 +59,7 @@
         rounding = 10;
       };
       windowrule = [
-        "opacity 0.3,^(kitty)$"
+        "opacity 0.7,^(kitty)$"
       ];
       "$mod" = "SUPER";
       bind =
