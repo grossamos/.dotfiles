@@ -64,6 +64,7 @@
           "$mod SHIFT, R, exec, hyprctl reload"
           "$mod SHIFT, Q, killactive,"
           "$mod, Q, killactive,"
+          "$mod, R, rofi -show combi -theme arthur,"
           "$mod, F, fullscreen,"
           "$mod, Escape, exec, hyprlock"
           ", Print, exec, grimblast copy area"
