@@ -1,4 +1,7 @@
 {pkgs, ...}: {
+  imports = [
+    ./hyprlock.nix
+  ];
   home.packages = with pkgs; [
     rofi-wayland # application launcher
     hyprlock # lock screen
