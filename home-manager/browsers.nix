@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  # home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
+  home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
 
   programs.firefox = {
     enable = true;
