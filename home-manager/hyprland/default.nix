@@ -44,8 +44,10 @@
         border_size = 2;
         border_part_of_window = false;
         no_border_on_floating = false;
-        "col.active_border" = "#e57c91ff";
-        "col.inactive_border" = "#aeb690ff";
+        "col.active_border" = "0xe57c91ff";
+        "col.inactive_border" = "0xaeb690ff";
+        # "col.active_border" = "rgb(cba6f7) rgb(94e2d5) 45deg";
+        # "col.inactive_border" = "0x00000000";
       };
       dwindle = {
         force_split = "2";
