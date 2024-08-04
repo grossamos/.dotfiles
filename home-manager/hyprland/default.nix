@@ -29,7 +29,7 @@
         };
         exec-once = [
           "hyprlock &"
-          "swaybg ~/.dotfiles/images/background.jpg"
+          "swaybg -i ~/.dotfiles/images/background.jpg &"
           "waybar"
         ];
       };
