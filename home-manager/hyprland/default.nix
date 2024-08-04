@@ -1,13 +1,13 @@
 {pkgs, ...}: {
   imports = [
     ./hyprlock.nix
-    ./waybar.nix
   ];
   home.packages = with pkgs; [
     rofi-wayland # application launcher
     hyprlock # lock screen
     dunst # notification deamon
     kitty
+    eww-wayland
     libnotify
     swaybg # animated background
     pipewire
@@ -16,6 +16,7 @@
     nautilus
     pamixer
     playerctl
+    brightnessctl
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -91,6 +92,9 @@
           ",XF86AudioNext,exec, playerctl next"
           ",XF86AudioPrev,exec, playerctl previous"
           ",XF86AudioStop, exec, playerctl stop"
+
+          ",XF86BrightnessUp, exec, brightnessctl +10%"
+          ",XF86BrightnessDown, exec, brightnessctl 10%-"
         ]
         ++ (
           # workspaces
