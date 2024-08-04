@@ -15,19 +15,19 @@
       "custom/launcher"
       "hyprland/workspaces"
     ];
-    # modules-center = [
-    #   "clock"
-    # ];
-    # modules-right = [
-    #   "tray"
-    #   "cpu"
-    #   "memory"
-    #   "disk"
-    #   "pulseaudio"
-    #   "battery"
-    #   "network"
-    #   "custom/notification"
-    # ];
+    modules-center = [
+      "clock"
+    ];
+    modules-right = [
+      "tray"
+      "cpu"
+      "memory"
+      "disk"
+      "pulseaudio"
+      "battery"
+      "network"
+      "custom/notification"
+    ];
     # clock = {
     #   calendar = {
     #     format = {today = "<span color='#b4befe'><b><u>{}</u></b></span>";};
