@@ -6,7 +6,7 @@
     dunst # notification deamon
     kitty
     libnotify
-    swww # animated background
+    swaybg # animated background
     pipewire
     wireplumber
     polkit_gnome # for passwd popup when apps elevate privliges
@@ -29,8 +29,7 @@
         };
         exec-once = [
           "hyprlock &"
-          "swww-daemon &"
-          "swww img ~/.dotfiles/images/background.jpg"
+          "swaybg ~/.dotfiles/images/background.jpg"
           "waybar"
         ];
       };
