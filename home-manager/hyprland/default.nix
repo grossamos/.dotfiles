@@ -10,7 +10,7 @@
     pipewire
     wireplumber
     polkit_gnome # for passwd popup when apps elevate privliges
-    gnome.nautilus
+    nautilus
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -29,13 +29,14 @@
         };
         exec-once = [
           "hyprlock &"
-          "swaybg -m fill ~/.dotfiles/images/background.jpg"
+          "swww-daemon &"
+          "swww img ~/.dotfiles/images/background.jpg"
           "waybar"
         ];
       };
       monitor = "eDP-1,1920x1080@60,0x0,1";
       animations = {
-        enabled = 1;
+        enabled = 0;
       };
       "$mod" = "SUPER";
       bind =
