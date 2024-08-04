@@ -6,7 +6,7 @@
     rofi-wayland # application launcher
     hyprlock # lock screen
     dunst # notification deamon
-    eww
+    ags
     libnotify
     swaybg # animated background
     pipewire
