@@ -45,7 +45,7 @@
           "SUPER_SHIFT, Escape, exec, hyprctl dispatch exit 1"
           "SUPER_SHIFT, R, exec, hyprctl reload"
           ", Print, exec, grimblast copy area"
-          "$mod, Escape, exec, swaylock"
+          "$mod, Escape, exec, hyprlock"
           "$mod, Q, killactive,"
 
           "$mod, left, movefocus, l"
