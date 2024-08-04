@@ -7,7 +7,7 @@
     hyprlock # lock screen
     dunst # notification deamon
     kitty
-    eww-wayland
+    eww
     libnotify
     swaybg # animated background
     pipewire
@@ -93,8 +93,8 @@
           ",XF86AudioPrev,exec, playerctl previous"
           ",XF86AudioStop, exec, playerctl stop"
 
-          ",XF86BrightnessUp, exec, brightnessctl +10%"
-          ",XF86BrightnessDown, exec, brightnessctl 10%-"
+          ",XF86BrightnessUp, exec, brightnessctl set +10%"
+          ",XF86BrightnessDown, exec, brightnessctl set 10%-"
         ]
         ++ (
           # workspaces
