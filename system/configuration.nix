@@ -193,5 +193,14 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
+  # for ags, prolly can removed soon https://github.com/NixOS/nixpkgs/issues/306446
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      ags = prev.ags.overrideAttrs (old: {
+        buildInputs = old.buildInputs ++ [pkgs.libdbusmenu-gtk3];
+      });
+    })
+  ];
 }
