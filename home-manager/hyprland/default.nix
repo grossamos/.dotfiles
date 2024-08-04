@@ -11,6 +11,8 @@
     wireplumber
     polkit_gnome # for passwd popup when apps elevate privliges
     nautilus
+    pamixer
+    playerctl
   ];
   wayland.windowManager.hyprland = {
     enable = true;
