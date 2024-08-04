@@ -1,9 +1,9 @@
 {...}: {
   programs.kitty = {
     enable = true;
-  theme = "Catppuccin-Mocha";
-  settings = {
-    background_opacity = "0.55";
-  };
+    theme = "Catppuccin-Mocha";
+    settings = {
+      background_opacity = "0.55";
+    };
   };
 }
