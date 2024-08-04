@@ -29,8 +29,8 @@
         "custom/notification"
       ];
       "hyprland/workspaces" = {
-        active-only = false;
-        disable-scroll = true;
+        # active-only = false;
+        # disable-scroll = true;
         format = "{icon}";
         on-click = "activate";
         format-icons = {
