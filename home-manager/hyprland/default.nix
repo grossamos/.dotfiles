@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   imports = [
     ./hyprlock.nix
+    # ./waybar.nix
   ];
   home.packages = with pkgs; [
     rofi-wayland # application launcher
     hyprlock # lock screen
-    waybar # top bar
     dunst # notification deamon
     kitty
     libnotify
@@ -58,6 +58,9 @@
       decoration = {
         rounding = 10;
       };
+      windowrule = [
+        "windowrule=opacity 0.3 override 0.3 override,title:(kitty)"
+      ];
       "$mod" = "SUPER";
       bind =
         [
@@ -67,7 +70,7 @@
           "$mod SHIFT, R, exec, hyprctl reload"
           "$mod SHIFT, Q, killactive,"
           "$mod, Q, killactive,"
-          "$mod, R, exec, rofi -show combi -theme arthur"
+          "$mod, R, exec, rofi -show drun -theme arthur"
           "$mod, F, fullscreen,"
           "$mod, Escape, exec, hyprlock"
           ", Print, exec, grimblast copy area"
