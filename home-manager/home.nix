@@ -3,7 +3,7 @@
     ../git
     ./gnome
     ./hyprland
-    ./kitty
+    # ./kitty
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -27,6 +27,7 @@
     pkgs.vulnix
     pkgs.tmux
     pkgs.ungoogled-chromium
+    pkgs.kitty
     pkgs.syncthing
     pkgs.ranger
     pkgs.android-tools
