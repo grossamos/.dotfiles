@@ -1,4 +1,7 @@
 {pkgs, ...}: {
+  imports = [
+    ./hyprlock.nix
+  ];
   home.packages = [pkgs.hyprlock];
   xdg.configFile."hypr/hyprlock.conf".text = ''
     $red = rgb(f38ba8)

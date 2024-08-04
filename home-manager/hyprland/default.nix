@@ -77,8 +77,8 @@
           "$mod, K, movefocus, u"
           "$mod, J, movefocus, d"
 
-          ",XF86AudioRaiseVolume,exec, pamixer -i 2"
-          ",XF86AudioLowerVolume,exec, pamixer -d 2"
+          ",XF86AudioRaiseVolume,exec, pamixer -i 5"
+          ",XF86AudioLowerVolume,exec, pamixer -d 5"
           ",XF86AudioMute,exec, pamixer -t"
           ",XF86AudioPlay,exec, playerctl play-pause"
           ",XF86AudioNext,exec, playerctl next"
