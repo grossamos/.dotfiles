@@ -10,6 +10,7 @@
     pipewire
     wireplumber
     polkit_gnome # for passwd popup when apps elevate privliges
+    gnome.nautilus
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -27,7 +28,9 @@
           natural_scroll = true;
         };
         exec-once = [
-          "hyprlock"
+          "hyprlock &"
+          "swaybg -m fill ~/.dotfiles/images/background.jpg"
+          "waybar"
         ];
       };
       monitor = "eDP-1,1920x1080@60,0x0,1";
@@ -43,6 +46,7 @@
           "SUPER_SHIFT, R, exec, hyprctl reload"
           ", Print, exec, grimblast copy area"
           "$mod, Escape, exec, swaylock"
+          "$mod, Q, killactive,"
 
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
