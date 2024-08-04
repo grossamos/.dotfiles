@@ -34,7 +34,6 @@
           natural_scroll = true;
         };
         exec-once = [
-          "hyprlock &"
           "swaybg -i ~/.dotfiles/images/background.jpg &"
           "ags &"
         ];

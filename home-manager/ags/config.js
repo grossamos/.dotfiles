@@ -12,7 +12,7 @@ const Bar = (/** @type {number} */ monitor) => Widget.Window({
     child: Widget.CenterBox({
         start_widget: Widget.Label({
             hpack: 'center',
-            label: 'Welcome to AGS!',
+            label: 'Welcome to Amos!',
         }),
         end_widget: Widget.Label({
             hpack: 'center',
