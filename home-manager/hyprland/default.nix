@@ -46,8 +46,6 @@
         no_border_on_floating = false;
         "col.active_border" = "0xffe57c91";
         "col.inactive_border" = "0xffaeb690";
-        # "col.active_border" = "rgb(cba6f7) rgb(94e2d5) 45deg";
-        # "col.inactive_border" = "0x00000000";
       };
       dwindle = {
         force_split = "2";
@@ -58,12 +56,13 @@
       "$mod" = "SUPER";
       bind =
         [
-          "SUPER_SHIFT, return, exec, firefox"
-          "SUPER, return, exec, kitty"
-          "SUPER_SHIFT, Escape, exec, hyprctl dispatch exit 1"
-          "SUPER_SHIFT, R, exec, hyprctl reload"
-          "SUPER_SHIFT, Q, killactive,"
+          "$mod SHIFT, return, exec, firefox"
+          "$mod, return, exec, kitty"
+          "$mod SHIFT, Escape, exec, hyprctl dispatch exit 1"
+          "$mod SHIFT, R, exec, hyprctl reload"
+          "$mod SHIFT, Q, killactive,"
           "$mod, Q, killactive,"
+          "$mod, F, fullscreen,"
           "$mod, Escape, exec, hyprlock"
           ", Print, exec, grimblast copy area"
 
@@ -75,6 +74,14 @@
           "$mod, L, movefocus, r"
           "$mod, K, movefocus, u"
           "$mod, J, movefocus, d"
+
+          ",XF86AudioRaiseVolume,exec, pamixer -i 2"
+          ",XF86AudioLowerVolume,exec, pamixer -d 2"
+          ",XF86AudioMute,exec, pamixer -t"
+          ",XF86AudioPlay,exec, playerctl play-pause"
+          ",XF86AudioNext,exec, playerctl next"
+          ",XF86AudioPrev,exec, playerctl previous"
+          ",XF86AudioStop, exec, playerctl stop"
         ]
         ++ (
           # workspaces
