@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ../git
+    ./git
     ./gnome
     ./hyprland
     ./kitty
@@ -28,6 +28,7 @@
     pkgs.vulnix
     pkgs.tmux
     pkgs.ungoogled-chromium
+    pkgs.firefox
     pkgs.kitty
     pkgs.syncthing
     pkgs.ranger
