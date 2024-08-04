@@ -37,6 +37,15 @@
       animations = {
         enabled = 0;
       };
+      general = {
+        gaps_in = 5;
+        gaps_out = 5;
+        "col.active_border" = "#e57c91";
+        "col.inactive_border" = "#aeb690";
+      };
+      decoration = {
+        rounding = 10;
+      };
       "$mod" = "SUPER";
       bind =
         [
