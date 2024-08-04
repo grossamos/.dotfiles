@@ -35,7 +35,7 @@
         on-click = "activate";
         format-icons = {
           urgent = "";
-          active = "";
+          active = "⬤";
           default = "";
           empty = "";
         };
