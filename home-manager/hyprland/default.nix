@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./hyprlock.nix
-    # ./waybar.nix
+    ./waybar.nix
   ];
   home.packages = with pkgs; [
     rofi-wayland # application launcher
