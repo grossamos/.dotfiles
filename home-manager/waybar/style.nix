@@ -25,17 +25,18 @@
     }
 
     #custom-power {
-      margin-left: 20;
+      margin-left: 10;
+      margin-right: 10;
+      background-color: #141c2f;
+      border-radius: 20;
+      padding: 2 5;
     }
 
     .modules-right {
       color: #ffffff;
       margin-top: 10;
-      margin-left: 10;
+      margin-right: 10;
       font-size: 18;
-      background-color: #141c2f;
-      border-radius: 20;
-      padding: 2 5;
     }
 
     window#waybar {
