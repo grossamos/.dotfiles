@@ -53,7 +53,7 @@
         };
       };
       clock = {
-        format = "{:%Y-%m-%d}";
+        format = "{:%H:%M}";
         locale = "en_US.UTF-8";
       };
     };
