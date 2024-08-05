@@ -24,6 +24,10 @@
       padding: 2 5;
     }
 
+    #custom-power {
+      width: 5;
+    }
+
     .modules-right {
       color: #ffffff;
       margin-top: 10;

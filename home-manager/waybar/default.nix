@@ -28,7 +28,7 @@
         "network"
         "pulseaudio"
         "battery"
-        "custom/logout_menu"
+        "custom/power"
       ];
       "hyprland/workspaces" = {
         active-only = false;
@@ -75,7 +75,7 @@
         "keyboard-name" = "at-translated-set-2-keyboard";
         "on-click" = "hyprctl switchxkblayout at-translated-set-2-keyboard next";
       };
-      "custom/logout_menu" = {
+      "custom/power" = {
         "return-type" = "json";
         exec = "echo '{ \"text\":\"󰐥\"}'";
         interval = "once";
