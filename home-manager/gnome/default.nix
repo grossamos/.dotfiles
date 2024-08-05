@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./autostart.nix
+    # ./autostart.nix
   ];
   dconf.settings = {
     "org/gnome/shell" = {
