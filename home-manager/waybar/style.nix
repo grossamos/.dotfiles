@@ -8,7 +8,7 @@
         min-height: 0;
     }
     window#waybar {
-      passing-top: 5px;
+      padding-top: 5px;
       background: none;
     }
     .modules-left {
