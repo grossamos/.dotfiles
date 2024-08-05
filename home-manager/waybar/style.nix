@@ -56,6 +56,14 @@
       color: #388f9b;
     }
 
+    #hyprland-language {
+      margin-left: 10;
+      background-color: #141c2f;
+      border-radius: 20;
+      padding: 5 20 5 20;
+      color: #ffffff;
+    }
+
     .modules-right {
       color: #ffffff;
       margin-top: 10;
