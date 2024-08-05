@@ -27,7 +27,7 @@
     #custom-power {
       margin-left: 10;
       background-color: #141c2f;
-      border-radius-left: 20;
+      border-radius: 20 0, 0, 20;
       padding: 5 5 5 20;
     }
 
