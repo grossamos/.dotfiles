@@ -1,15 +1,14 @@
 {
   xdg.configFile."autostart/syncthing.decktop".text = ''
     [Desktop Entry]
-    Name=syncthing
-    GenericName=File Synchronizer
-    Exec=syncthing
+    Name=Syncthing Web UI
+    GenericName=File synchronization UI
+    Comment=Opens Syncthing's Web UI in the default browser (Syncthing must already be started).
+    Exec=/etc/profiles/per-user/amos/bin/syncthing serve --no-browser --logfile=default
+    Icon=syncthing
     Terminal=false
-    Icon=Syncthing
-    Categories=Network
     Type=Application
-    StartupNotify=false
-    X-GNOME-Autostart-enabled=true
-    X-GNOME-Autostart-Delay=10
+    Keywords=synchronization;interface;
+    Categories=Network;FileTransfer;P2P
   '';
 }
