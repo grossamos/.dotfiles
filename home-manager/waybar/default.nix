@@ -76,12 +76,12 @@
           "low" = 10;
         };
         "tooltip-format" = "{desc}";
-        "format" = "{icon}{volume}  {format_source}";
-        "format-bluetooth" = "󰂱{icon}{volume}  {format_source}";
-        "format-bluetooth-muted" = "󰂱󰝟{volume}  {format_source}";
-        "format-muted" = "󰝟{volume}  {format_source}";
-        "format-source" = "󰍬{volume}%";
-        "format-source-muted" = "󰍭{volume}%";
+        "format" = "{icon} {volume}  {format_source}";
+        "format-bluetooth" = "󰂱{icon} {volume}  {format_source}";
+        "format-bluetooth-muted" = "󰂱󰝟 {volume}  {format_source}";
+        "format-muted" = "󰝟 {volume}  {format_source}";
+        "format-source" = "󰍬 {volume}%";
+        "format-source-muted" = "󰍭 {volume}%";
         "format-icons" = {
           "headphone" = "󰋋";
           "hands-free" = "";
