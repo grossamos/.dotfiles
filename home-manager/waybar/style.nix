@@ -26,6 +26,8 @@
       border-radius: 20;
       font-size: 18;
       padding: 2 20;
+      font-weight: bold;
+      color: #e6818d;
     }
   '';
 }
