@@ -13,7 +13,7 @@
     .modules-left {
       margin-top: 10;
       margin-left: 10;
-      font-size: 10;
+      font-size: 12;
       background-color: #141c2f;
       border-radius: 20;
       padding: 2 5;
@@ -25,7 +25,7 @@
       background-color: #141c2f;
       border-radius: 20;
       font-size: 18;
-      padding: 2 5;
+      padding: 2 10;
     }
   '';
 }
