@@ -26,6 +26,7 @@
       input = {
         kb_layout = "us,de";
         numlock_by_default = true;
+        kb_options = "grp:super_space_toggle";
         follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
@@ -67,7 +68,7 @@
           "$mod, Q, killactive,"
           "$mod, R, exec, rofi -show drun -theme arthur"
           "$mod, F, fullscreen,"
-          "$mod , space , exec, hyprctl switchxkblayout"
+          "$mod, space , exec, hyprctl switchxkblayout"
           "$mod, Escape, exec, hyprlock"
           ", Print, exec, grimblast copy area"
 
