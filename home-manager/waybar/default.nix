@@ -1,4 +1,7 @@
 {pkgs, ...}: {
+  imports = [
+    ./style.nix
+  ];
   home.packages = with pkgs; [
     waybar
   ];
