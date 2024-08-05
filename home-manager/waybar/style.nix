@@ -17,16 +17,16 @@
     .modules-left {
       margin-top: 10;
       margin-left: 10;
-      font-size: 12;
+      font-size: 15;
       background-color: #141c2f;
       border-radius: 20;
       padding: 2 5;
+      color: white;
     }
 
     * {
         border-radius: 0;
         font-family: Roboto, Helvetica, Arial, sans-serif;
-        color: white;
         min-height: 0;
     }
 
