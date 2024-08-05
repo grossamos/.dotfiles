@@ -12,13 +12,16 @@
     }
 
     #workspaces {
-      color: #ffffff;
       margin-top: 10;
       margin-left: 10;
       font-size: 15;
       background-color: #141c2f;
       border-radius: 20;
       padding: 2 5;
+    }
+
+    #workspaces > button {
+      color: #ffffff;
     }
 
     #custom-power {
