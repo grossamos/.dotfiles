@@ -26,7 +26,7 @@
       input = {
         kb_layout = "us,de";
         numlock_by_default = true;
-        kb_options = "grp:super_space_toggle";
+        kb_options = "grp:win_space_toggle";
         follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
