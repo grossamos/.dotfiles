@@ -69,7 +69,7 @@
       };
       "network" = {
         "format" = "󰤭";
-        "format-wifi" = "{icon}&nbps ({signalStrength}%) {essid}";
+        "format-wifi" = "{icon}  ({signalStrength}%) {essid}";
         "format-icons" = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
         "format-disconnected" = "󰤫 Disconnected";
         "tooltip-format" = "wifi <span color='#ee99a0'>off</span>";
