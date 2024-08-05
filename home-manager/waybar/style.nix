@@ -24,8 +24,12 @@
       padding: 2 5;
     }
 
+    #hyprland-workspaces {
+      color: #ffffff;
+    }
+
     #custom-power {
-      width: 5;
+      padding: 5 5;
     }
 
     .modules-right {
