@@ -5,7 +5,7 @@
         border-radius: 0;
         font-family: Roboto, Helvetica, Arial, sans-serif;
         font-size: 13px;
-        font-color: white;
+        color: white;
         min-height: 0;
     }
     window#waybar {
