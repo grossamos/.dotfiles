@@ -29,14 +29,14 @@
       background-color: #141c2f;
       border-radius: 20 0 0 20;
       padding: 5 20 5 15;
-      color: #9fb08f;
+      color: #e6818d;
     }
 
     #battery {
       background-color: #141c2f;
-      border-radius: 20 0 0 20;
-      padding: 5 10 5 10;
-      color: #e6818d;
+      border-radius: 20;
+      padding: 5 20 5 20;
+      color: #9fb08f;
     }
 
     .modules-right {
