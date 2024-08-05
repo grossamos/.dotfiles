@@ -11,7 +11,7 @@
       font-weight: bold;
     }
 
-    #hyprland-workspaces {
+    #workspaces {
       color: #ffffff;
       margin-top: 10;
       margin-left: 10;
@@ -53,7 +53,7 @@
       color: #388f9b;
     }
 
-    #hyprland-language {
+    #language {
       margin-left: 10;
       background-color: #141c2f;
       border-radius: 20;

@@ -30,7 +30,7 @@
         "battery"
         "custom/power"
       ];
-      "hyprland/workspaces" = {
+      "hyprland/workspaces#workspaces" = {
         active-only = false;
         disable-scroll = true;
         format = "{icon}";
@@ -69,7 +69,7 @@
         "format-alt" = "{time} {icon}";
         "format-icons" = ["" "" "" "" ""];
       };
-      "hyprland/language" = {
+      "hyprland/language#language" = {
         "format-en" = "en";
         "format-de" = "de";
         "keyboard-name" = "at-translated-set-2-keyboard";
