@@ -8,12 +8,13 @@
         min-height: 0;
     }
     window#waybar {
+      margin-top: 5px;
       background: none;
     }
     .modules-left {
       background-color: #002b36;
       border-radius: 20px;
-      padding: 0 10px;
+      padding: 0 5px;
     }
   '';
 }
