@@ -55,6 +55,17 @@
         format = "{:%H:%M}";
         locale = "en_US.UTF-8";
       };
+      "battery" = {
+        "states" = {
+          "warning" = 30;
+          "critical" = 15;
+        };
+        "format" = "{capacity}% {icon}";
+        "format-charging" = "{capacity}% ";
+        "format-plugged" = "{capacity}% ";
+        "format-alt" = "{time} {icon}";
+        "format-icons" = ["" "" "" "" ""];
+      };
       "hyprland/language" = {
         "format-en" = "en";
         "format-de" = "de";
