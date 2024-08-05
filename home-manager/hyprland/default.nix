@@ -67,7 +67,7 @@
           "$mod, Q, killactive,"
           "$mod, R, exec, rofi -show drun -theme arthur"
           "$mod, F, fullscreen,"
-          "$mod CTRL, , exec, hyprctl switchxkblayout"
+          "$mod , space , exec, hyprctl switchxkblayout"
           "$mod, Escape, exec, hyprlock"
           ", Print, exec, grimblast copy area"
 
@@ -88,8 +88,8 @@
           ",XF86AudioPrev,exec, playerctl previous"
           ",XF86AudioStop, exec, playerctl stop"
 
-          ",XF86BrightnessUp, exec, brightnessctl set +10%"
-          ",XF86BrightnessDown, exec, brightnessctl set 10%-"
+          ",XF86MonBrightnessUp, exec, brightnessctl set +10%"
+          ",XF86MonBrightnessDown, exec, brightnessctl set 10%-"
         ]
         ++ (
           # workspaces
