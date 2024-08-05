@@ -76,10 +76,10 @@
           "low" = 10;
         };
         "tooltip-format" = "{desc}";
-        "format" = "{icon}{volume}%\n{format_source}";
-        "format-bluetooth" = "󰂱{icon}{volume}%\n{format_source}";
-        "format-bluetooth-muted" = "󰂱󰝟{volume}%\n{format_source}";
-        "format-muted" = "󰝟{volume}%\n{format_source}";
+        "format" = "{icon}{volume}  {format_source}";
+        "format-bluetooth" = "󰂱{icon}{volume}  {format_source}";
+        "format-bluetooth-muted" = "󰂱󰝟{volume}  {format_source}";
+        "format-muted" = "󰝟{volume}  {format_source}";
         "format-source" = "󰍬{volume}%";
         "format-source-muted" = "󰍭{volume}%";
         "format-icons" = {
