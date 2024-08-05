@@ -1,4 +1,7 @@
 {...}: {
+  imports = [
+    ./autostart.nix
+  ];
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [

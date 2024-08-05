@@ -34,6 +34,7 @@
         };
         exec-once = [
           "swaybg -i ~/.dotfiles/images/background.jpg &"
+          "syncthing &"
           "waybar &"
         ];
       };
