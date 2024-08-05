@@ -15,13 +15,23 @@
       background: none;
     }
     .modules-left {
+      color: #ffffff;
       margin-top: 10;
       margin-left: 10;
       font-size: 15;
       background-color: #141c2f;
       border-radius: 20;
       padding: 2 5;
-      color: white;
+    }
+
+    .modules-right {
+      color: #ffffff;
+      margin-top: 10;
+      margin-left: 10;
+      font-size: 18;
+      background-color: #141c2f;
+      border-radius: 20;
+      padding: 2 5;
     }
 
     * {
