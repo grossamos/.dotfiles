@@ -25,6 +25,7 @@
     }
 
     #custom-power {
+      margin-left: 20;
     }
 
     .modules-right {
