@@ -26,16 +26,14 @@
 
     #custom-power {
       margin-left: 10;
-      margin-right: 10;
       background-color: #141c2f;
-      border-radius: 20;
-      padding: 2 5;
+      border-radius-left: 20;
+      padding: 5 5 5 20;
     }
 
     .modules-right {
       color: #ffffff;
       margin-top: 10;
-      margin-right: 10;
       font-size: 18;
     }
 
