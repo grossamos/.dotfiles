@@ -10,7 +10,8 @@
       padding: 2 20;
       font-weight: bold;
     }
-    .modules-left {
+
+    #hyprland-workspaces {
       color: #ffffff;
       margin-top: 10;
       margin-left: 10;
@@ -18,10 +19,6 @@
       background-color: #141c2f;
       border-radius: 20;
       padding: 2 5;
-    }
-
-    #hyprland-workspaces {
-      color: #ffffff;
     }
 
     #custom-power {
