@@ -52,7 +52,7 @@
           "10" = [];
         };
       };
-      "clock#time" = {
+      clock = {
         format = "{:%Y-%m-%d}";
         locale = "en_US.UTF-8";
       };
