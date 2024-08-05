@@ -6,10 +6,9 @@
         font-family: Roboto, Helvetica, Arial, sans-serif;
         font-size: 13px;
         min-height: 0;
-        background-color: red;
     }
     window#waybar {
-      background-color: red;
+      background: none;
       border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     }
   '';
