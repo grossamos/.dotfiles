@@ -63,13 +63,13 @@
       };
       "custom/logout_menu" = {
         "return-type" = "json";
-        exec = "echo '{ \"text\":\"󰐥\", \"tooltip\": \"logout menu\" }'";
+        exec = "echo '{ \"text\":\"󰐥\"}'";
         interval = "once";
         "on-click" = "shutdown now";
       };
       "network" = {
         "format" = "󰤭";
-        "format-wifi" = "{icon}({signalStrength}%){essid}";
+        "format-wifi" = "{icon} ({signalStrength}%){essid}";
         "format-icons" = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
         "format-disconnected" = "󰤫 Disconnected";
         "tooltip-format" = "wifi <span color='#ee99a0'>off</span>";
@@ -79,8 +79,7 @@
         "format-linked" = "󰈀 {ifname} (No IP)";
         "tooltip-format-ethernet" = "Interface: {ifname}\nIP: {ipaddr}\nGW: {gwaddr}\nNetmask: {netmask}\nCIDR: {cidr}\n\n<span color='#a6da95'>{bandwidthUpBits}</span>\t<span color='#ee99a0'>{bandwidthDownBits}</span>\t<span color='#c6a0f6'>󰹹{bandwidthTotalBits}</span>";
         "max-length" = 35;
-        "on-click" = "bash -c wifi_toggle";
-        "on-click-right" = "kitty nmtui";
+        "on-click" = "kitty nmtui";
       };
     };
   };
