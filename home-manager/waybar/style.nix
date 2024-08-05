@@ -12,7 +12,7 @@
       background: none;
     }
     .modules-left {
-      background-color: #002b36;
+      background-color: #141c2f;
       border-radius: 20px;
       padding: 0 5px;
     }
