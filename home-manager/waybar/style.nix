@@ -8,13 +8,13 @@
         min-height: 0;
     }
     window#waybar {
-      margin-top: 5px;
+      passing-top: 5px;
       background: none;
     }
     .modules-left {
       background-color: #141c2f;
       border-radius: 20px;
-      padding: 0 5px;
+      padding: 2px 5px;
     }
   '';
 }
