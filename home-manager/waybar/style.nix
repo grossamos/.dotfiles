@@ -1,16 +1,18 @@
 {...}: {
   xdg.configFile."waybar/style.css".text = ''
     * {
-        border: none;
         border-radius: 0;
         font-family: Roboto, Helvetica, Arial, sans-serif;
-        font-size: 13px;
+        font-size: 20;
         color: white;
         min-height: 0;
     }
     window#waybar {
       background: none;
-      border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    }
+    .modules-left {
+      background-color: #586e75;
+      border-radius: 20px;
     }
   '';
 }
