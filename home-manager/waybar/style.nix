@@ -12,9 +12,11 @@
       background: none;
     }
     .modules-left {
+      margin-top: 5;
+      font-size: 12;
       background-color: #141c2f;
-      border-radius: 20px;
-      padding: 2px 5px;
+      border-radius: 20;
+      padding: 2 5;
     }
   '';
 }
