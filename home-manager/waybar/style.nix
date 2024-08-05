@@ -4,11 +4,11 @@
       margin-top: 10;
       margin-left: 10;
       background-color: #141c2f;
+      color: #9fb08f;
       border-radius: 20;
       font-size: 18;
       padding: 2 20;
       font-weight: bold;
-      color: #e6818d;
     }
     .modules-left {
       color: #ffffff;
@@ -28,7 +28,8 @@
       margin-left: 10;
       background-color: #141c2f;
       border-radius: 20 0 0 20;
-      padding: 5 5 5 20;
+      padding: 5 20 5 10;
+      color: #e6818d;
     }
 
     .modules-right {
