@@ -1,22 +1,15 @@
-{pkgs, ...}: let
-  autostartPrograms = [pkgs.syncthing];
-in {
-  home.file = builtins.listToAttrs (map
-    (pkg: {
-      name = ".config/autostart/" + pkg.pname + ".desktop";
-      value =
-        if pkg ? desktopItem
-        then {
-          # Application has a desktopItem entry.
-          # Assume that it was made with makeDesktopEntry, which exposes a
-          # text attribute with the contents of the .desktop file
-          text = pkg.desktopItem.text;
-        }
-        else {
-          # Application does *not* have a desktopItem entry. Try to find a
-          # matching .desktop name in /share/apaplications
-          source = pkg + "/share/applications/" + pkg.pname + ".desktop";
-        };
-    })
-    autostartPrograms);
+{
+  xdg.configFile."autostart/syncthing.decktop".text = ''
+    [Desktop Entry]
+    Name=syncthing
+    GenericName=File Synchronizer
+    Exec=syncthing
+    Terminal=false
+    Icon=Syncthing
+    Categories=Network
+    Type=Application
+    StartupNotify=false
+    X-GNOME-Autostart-enabled=true
+    X-GNOME-Autostart-Delay=10
+  '';
 }
