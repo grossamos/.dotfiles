@@ -12,8 +12,9 @@
       background: none;
     }
     .modules-left {
-      margin-top: 5;
-      font-size: 12;
+      margin-top: 10;
+      margin-left: 10;
+      font-size: 10;
       background-color: #141c2f;
       border-radius: 20;
       padding: 2 5;
