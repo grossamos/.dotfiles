@@ -41,10 +41,19 @@
     }
 
     #pulseaudio {
+      margin-left: 10;
       background-color: #141c2f;
       border-radius: 20;
       padding: 5 20 5 20;
-      color: #195163;
+      color: #ffffff;
+    }
+
+    #network {
+      margin-left: 10;
+      background-color: #141c2f;
+      border-radius: 20;
+      padding: 5 20 5 20;
+      color: #388f9b;
     }
 
     .modules-right {
