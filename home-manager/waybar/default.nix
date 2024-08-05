@@ -17,14 +17,13 @@
       margin-left = 0;
       margin-right = 0;
       modules-left = [
-        "custom/launcher"
-        "hyprland/workspaces"
+        "hyprland/workspaces#workspaces"
       ];
       modules-center = [
         "clock"
       ];
       modules-right = [
-        "hyprland/language"
+        "hyprland/language#language"
         "network"
         "pulseaudio"
         "battery"
