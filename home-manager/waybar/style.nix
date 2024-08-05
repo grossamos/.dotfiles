@@ -25,7 +25,7 @@
       background-color: #141c2f;
       border-radius: 20;
       font-size: 18;
-      padding: 2 10;
+      padding: 2 20;
     }
   '';
 }
