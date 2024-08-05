@@ -10,10 +10,6 @@
       font-weight: bold;
       color: #e6818d;
     }
-    window#waybar {
-      padding-top: 5px;
-      background: none;
-    }
     .modules-left {
       color: #ffffff;
       margin-top: 10;
@@ -29,7 +25,6 @@
     }
 
     #custom-power {
-      padding: 5 5;
     }
 
     .modules-right {
@@ -40,6 +35,10 @@
       background-color: #141c2f;
       border-radius: 20;
       padding: 2 5;
+    }
+
+    window#waybar {
+      background: none;
     }
 
     * {
