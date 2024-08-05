@@ -67,6 +67,41 @@
         interval = "once";
         "on-click" = "shutdown now";
       };
+      "pulseaudio" = {
+        "states" = {
+          "high" = 90;
+          "upper-medium" = 70;
+          "medium" = 50;
+          "lower-medium" = 30;
+          "low" = 10;
+        };
+        "tooltip-format" = "{desc}";
+        "format" = "{icon}{volume}%\n{format_source}";
+        "format-bluetooth" = "󰂱{icon}{volume}%\n{format_source}";
+        "format-bluetooth-muted" = "󰂱󰝟{volume}%\n{format_source}";
+        "format-muted" = "󰝟{volume}%\n{format_source}";
+        "format-source" = "󰍬{volume}%";
+        "format-source-muted" = "󰍭{volume}%";
+        "format-icons" = {
+          "headphone" = "󰋋";
+          "hands-free" = "";
+          "headset" = "󰋎";
+          "phone" = "󰄜";
+          "portable" = "󰦧";
+          "car" = "󰄋";
+          "speaker" = "󰓃";
+          "hdmi" = "󰡁";
+          "hifi" = "󰋌";
+          "default" = [
+            "󰕿"
+            "󰖀"
+            "󰕾"
+          ];
+        };
+        "reverse-scrolling" = true;
+        "reverse-mouse-scrolling" = true;
+        "on-click" = "pavucontrol";
+      };
       "network" = {
         "format" = "󰤭";
         "format-wifi" = "{icon}  ({signalStrength}%) {essid}";
