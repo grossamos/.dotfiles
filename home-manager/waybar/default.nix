@@ -21,10 +21,9 @@
         "clock"
       ];
       modules-right = [
-        "pulseaudio"
+        "hyprland/language"
         "network"
-        "cpu"
-        "memory"
+        "pulseaudio"
         "battery"
         "custom/notification"
       ];
@@ -55,6 +54,12 @@
       clock = {
         format = "{:%H:%M}";
         locale = "en_US.UTF-8";
+      };
+      "hyprland/language" = {
+        "format-en" = "en";
+        "format-de" = "de";
+        "keyboard-name" = "at-translated-set-2-keyboard";
+        "on-click" = "hyprctl switchxkblayout at-translated-set-2-keyboard next";
       };
     };
   };
