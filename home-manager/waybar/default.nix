@@ -25,7 +25,7 @@
         "network"
         "pulseaudio"
         "battery"
-        "custom/notification"
+        "custom/logout_menu"
       ];
       "hyprland/workspaces" = {
         active-only = false;
@@ -60,6 +60,12 @@
         "format-de" = "de";
         "keyboard-name" = "at-translated-set-2-keyboard";
         "on-click" = "hyprctl switchxkblayout at-translated-set-2-keyboard next";
+      };
+      "custom/logout_menu" = {
+        "return-type" = "json";
+        exec = "echo '{ \"text\":\"󰐥\", \"tooltip\": \"logout menu\" }'";
+        interval = "once";
+        "on-click" = "shutdown now";
       };
     };
   };
