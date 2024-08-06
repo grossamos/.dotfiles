@@ -74,7 +74,7 @@
           "$mod, F, fullscreen,"
           "$mod, space , exec, hyprctl switchxkblayout"
           "$mod, Escape, exec, hyprlock"
-          ", Print, exec, grim -g `$(slurp)` `$HOME/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d--%H:%M:%S').png`"
+          ", Print, exec, grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d--%H:%M:%S').png\""
 
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
