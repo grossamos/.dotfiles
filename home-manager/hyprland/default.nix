@@ -16,6 +16,7 @@
     pamixer
     playerctl
     brightnessctl
+    blueman
   ];
   wayland.windowManager.hyprland = {
     enable = true;

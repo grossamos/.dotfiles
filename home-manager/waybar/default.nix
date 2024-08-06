@@ -74,6 +74,18 @@
         "keyboard-name" = "at-translated-set-2-keyboard";
         "on-click" = "hyprctl switchxkblayout at-translated-set-2-keyboard next";
       };
+      bluetooth = {
+        "format" = "󰂯";
+        "format-disabled" = "󰂲";
+        "format-connected" = "󰂱 {device_alias}";
+        "tooltip-format" = "{controller_alias}\t{controller_address} ({status})\n\n{num_connections} connected";
+        "tooltip-format-disabled" = "bluetooth off";
+        "tooltip-format-connected" = "{controller_alias}\t{controller_address} ({status})\n\n{num_connections} connected\n\n{device_enumerate}";
+        "tooltip-format-enumerate-connected" = "{device_alias}\t{device_address}";
+        "tooltip-format-enumerate-connected-battery" = "{device_alias}\t{device_address}\t({device_battery_percentage}%)";
+        "max-length" = 35;
+        "on-click" = "blueman-manager";
+      };
       "custom/power" = {
         "return-type" = "json";
         exec = "echo '{ \"text\":\"󰐥\"}'";
