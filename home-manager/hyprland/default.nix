@@ -2,6 +2,7 @@
   imports = [
     ./hyprlock.nix
     ./hypridle.nix
+    ./hyprshade.nix
     ../waybar
   ];
   home.packages = with pkgs; [
@@ -76,7 +77,7 @@
           "$mod, Q, killactive,"
           "$mod, R, exec, rofi -show drun -theme arthur"
           "$mod, F, fullscreen,"
-          "$mod, B, exec, hyprshade toggle"
+          "$mod, B, exec, hyprshade toggle ~/.config/hypr/hyprshade.glsl"
           "$mod, space , exec, hyprctl switchxkblayout"
           "$mod, Escape, exec, hyprlock"
           ", Print, exec, grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d--%H:%M:%S').png\""
