@@ -35,8 +35,8 @@
     #bluetooth {
       margin-left: 10;
       background-color: #141c2f;
-      border-radius: 20 0 0 20;
-      padding: 5 20 5 15;
+      border-radius: 20;
+      padding: 5 20 5 20;
       color: #388f9b;
     }
 
