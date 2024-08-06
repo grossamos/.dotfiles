@@ -50,12 +50,13 @@
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
       pushd ~/.dotfiles
+      git add .
       nix flake update
       alejandra . &>/dev/null
       git diff -U0 *.nix
       sudo nixos-rebuild switch --flake .
       gen=$(nixos-rebuild list-generations | grep current)
-      git commit -am "$gen"
+      git commit -m "$gen"
       git push
       popd
     '')

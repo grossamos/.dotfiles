@@ -1,13 +1,16 @@
 {pkgs, ...}: {
   imports = [
     ./hyprlock.nix
+    ./hypridle.nix
     ../waybar
   ];
   home.packages = with pkgs; [
     rofi-wayland # application launcher
     hyprlock # lock screen
+    hypridle
     dunst # notification deamon
     libnotify
+    hyprshade
     swaybg # animated background
     pipewire
     wireplumber
@@ -39,6 +42,7 @@
           "swaybg -i ~/.dotfiles/images/background.jpg &"
           "waybar &"
           "syncthing serve --no-browser --logfile=default &"
+          "hypridle &"
         ];
       };
       monitor = "eDP-1,1920x1080@60,0x0,1";
@@ -72,6 +76,7 @@
           "$mod, Q, killactive,"
           "$mod, R, exec, rofi -show drun -theme arthur"
           "$mod, F, fullscreen,"
+          "$mod, B, exec, hyprshade toggle"
           "$mod, space , exec, hyprctl switchxkblayout"
           "$mod, Escape, exec, hyprlock"
           ", Print, exec, grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d--%H:%M:%S').png\""
