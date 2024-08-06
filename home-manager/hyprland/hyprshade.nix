@@ -19,7 +19,7 @@ uniform sampler2D tex;
  * @min 1000.0
  * @max 40000.0
  */
-const float Temperature = float({{#nc}}{{temperature}} ? 4600.0{{/nc}});
+const float Temperature = 4600.0;
 
 /**
  * Strength of filter.
@@ -27,7 +27,7 @@ const float Temperature = float({{#nc}}{{temperature}} ? 4600.0{{/nc}});
  * @min 0.0
  * @max 1.0
  */
-const float Strength = float({{#nc}}{{strength}} ? 1.0{{/nc}});
+const float Strength = 1.0;
 
 #define WithQuickAndDirtyLuminancePreservation
 const float LuminancePreservationFactor = 1.0;
