@@ -32,6 +32,14 @@
       color: #e6818d;
     }
 
+    #bluetooth {
+      margin-left: 10;
+      background-color: #141c2f;
+      border-radius: 20 0 0 20;
+      padding: 5 20 5 15;
+      color: #388f9b;
+    }
+
     #battery {
       margin-left: 10;
       background-color: #141c2f;
@@ -53,7 +61,7 @@
       background-color: #141c2f;
       border-radius: 20;
       padding: 5 20 5 20;
-      color: #388f9b;
+      color: #50D5D5;
     }
 
     #language {

@@ -27,6 +27,7 @@
         "network"
         "pulseaudio"
         "battery"
+        "bluetooth"
         "custom/power"
       ];
       "hyprland/workspaces#workspaces" = {
