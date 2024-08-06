@@ -17,6 +17,8 @@
     playerctl
     brightnessctl
     blueman
+    grim
+    slurp
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -72,7 +74,7 @@
           "$mod, F, fullscreen,"
           "$mod, space , exec, hyprctl switchxkblayout"
           "$mod, Escape, exec, hyprlock"
-          ", Print, exec, grimblast copy area"
+          ", Print, exec, slurp"
 
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
