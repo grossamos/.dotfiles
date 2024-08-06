@@ -34,8 +34,8 @@
         };
         exec-once = [
           "swaybg -i ~/.dotfiles/images/background.jpg &"
-          "syncthing &"
           "waybar &"
+          "syncthing serve --no-browser --logfile=default &"
         ];
       };
       monitor = "eDP-1,1920x1080@60,0x0,1";
