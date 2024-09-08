@@ -27,6 +27,7 @@
   home.packages = [
     pkgs.neofetch
     pkgs.vulnix
+    pkgs.hyprcursor
     pkgs.btop
     pkgs.tmux
     pkgs.ungoogled-chromium
