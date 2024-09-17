@@ -40,6 +40,7 @@
           natural_scroll = true;
         };
         exec-once = [
+          "hyprctl setcursor Adwaita 20 &"
           "swaybg -i ~/.dotfiles/images/background.jpg &"
           "waybar &"
           "syncthing serve --no-browser --logfile=default &"
