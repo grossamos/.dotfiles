@@ -163,6 +163,9 @@
 
   programs.adb.enable = true;
 
+  networking.wireless.userControlled.enable = true;
+  users.extraUsers.amos.extraGroups = ["wheel"];
+
   #xdg.portal.enable = true;
   #xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 

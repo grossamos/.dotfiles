@@ -31,7 +31,6 @@
     pkgs.btop
     pkgs.tmux
     pkgs.ungoogled-chromium
-    pkgs.firefox
     pkgs.element-desktop
     pkgs.kitty
     pkgs.syncthing
