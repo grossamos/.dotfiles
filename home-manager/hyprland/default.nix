@@ -24,6 +24,9 @@
     grim
     slurp
   ];
+
+  xdg.portal.config.common.default = "*";
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland = {
@@ -80,7 +83,7 @@
           "$mod, F, fullscreen,"
           "$mod, B, exec, hyprshade toggle ~/.config/hypr/hyprshade.glsl"
           "$mod, space , exec, hyprctl switchxkblayout"
-          "$mod, Escape, exec, hyprlock"
+          "$mod, Escape, exec, systemctl suspend"
           ", Print, exec, grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d--%H:%M:%S').png\""
 
           "$mod, left, movefocus, l"

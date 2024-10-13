@@ -26,10 +26,12 @@
   # environment.
   home.packages = [
     pkgs.neofetch
+    # pkgs.otpclient
     pkgs.vulnix
     pkgs.hyprcursor
     pkgs.btop
     pkgs.tmux
+    # pkgs.fzf
     pkgs.ungoogled-chromium
     pkgs.element-desktop
     pkgs.kitty
