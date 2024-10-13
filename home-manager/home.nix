@@ -35,6 +35,7 @@
     pkgs.ungoogled-chromium
     pkgs.element-desktop
     pkgs.kitty
+    pkgs.virtualbox
     pkgs.syncthing
     pkgs.ranger
     pkgs.android-tools
