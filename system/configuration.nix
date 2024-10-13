@@ -125,6 +125,7 @@
     git
     # for my mouse
     openrazer-daemon
+    virtualbox
   ];
 
   fonts = {
