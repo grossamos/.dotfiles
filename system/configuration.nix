@@ -131,6 +131,11 @@
     virtualbox
   ];
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+
+
   fonts = {
     packages = with pkgs; [
       noto-fonts
@@ -168,7 +173,7 @@
   programs.adb.enable = true;
 
   networking.wireless.userControlled.enable = true;
-  users.extraUsers.amos.extraGroups = ["wheel"];
+  users.extraUsers.amos.extraGroups = ["wheel" "vboxusers"];
 
   #xdg.portal.enable = true;
   #xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
