@@ -44,8 +44,8 @@
         };
         exec-once = [
           "hyprctl setcursor Adwaita 20 &"
-          "swaybg -i ~/.dotfiles/images/background.jpg &"
           "waybar &"
+          "swaybg -i ~/.dotfiles/images/background.jpg &"
           "syncthing serve --no-browser --logfile=default &"
           "hypridle &"
         ];
