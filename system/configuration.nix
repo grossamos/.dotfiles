@@ -128,7 +128,6 @@
     git
     # for my mouse
     openrazer-daemon
-    virtualbox
   ];
 
   virtualisation.libvirtd.enable = true;
@@ -173,7 +172,7 @@
   programs.adb.enable = true;
 
   networking.wireless.userControlled.enable = true;
-  users.extraUsers.amos.extraGroups = ["wheel" "vboxusers"];
+  users.extraUsers.amos.extraGroups = ["wheel" "vboxusers" "kvm"];
 
   #xdg.portal.enable = true;
   #xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
