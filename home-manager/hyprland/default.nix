@@ -50,7 +50,10 @@
           "hypridle &"
         ];
       };
-      monitor = "eDP-1,1920x1080@60,0x0,1";
+      monitor = [
+        ", preferred, auto, 1, mirror, DP-1"
+        "eDP-1,1920x1080@60,0x0,1"
+      ];
       animations = {
         enabled = 0;
       };
@@ -70,6 +73,7 @@
       decoration = {
         rounding = 10;
       };
+
       "$mod" = "SUPER";
       bind =
         [
