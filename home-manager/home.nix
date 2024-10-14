@@ -29,6 +29,8 @@
     pkgs.otpclient
     pkgs.vulnix
     pkgs.hyprcursor
+    pkgs.android-studio
+    pkgs.android-tools
     pkgs.btop
     pkgs.tmux
     pkgs.fzf
