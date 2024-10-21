@@ -26,6 +26,8 @@
   # environment.
   home.packages = [
     pkgs.neofetch
+    pkgs.docker
+    pkgs.docker-compose
     pkgs.otpclient
     pkgs.vulnix
     pkgs.hyprcursor
