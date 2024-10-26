@@ -221,6 +221,7 @@
   programs.nix-ld.libraries = with pkgs; [
     xorg.libX11
     libpulseaudio
+    libpng
   ];
 
   nix.gc = {
