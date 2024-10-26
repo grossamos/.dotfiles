@@ -129,6 +129,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    steam-run
     # for my mouse
     openrazer-daemon
   ];
