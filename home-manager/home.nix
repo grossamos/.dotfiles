@@ -131,10 +131,10 @@
       nix-direnv.enable = true;
     };
     bash = {
-     enable = true;
-     shellAliases = {
+      enable = true;
+      shellAliases = {
         ssh = "kitten ssh";
-     };
+      };
     };
   };
 
