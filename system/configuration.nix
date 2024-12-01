@@ -189,7 +189,7 @@
       nerd-fonts.open-dyslexic
       nerd-fonts.daddy-time-mono
       # nerd-fonts.overpass
-      # nerd-fonts.dejavu-sans-mono
+      nerd-fonts.dejavu-sans-mono
       # nerd-fonts.override
       # nerd-fonts.departure-mono
       # nerd-fonts.overrideDerivation
@@ -199,9 +199,9 @@
       # nerd-fonts.proggy-clean-tt
       # nerd-fonts.fantasque-sans-mono
       # nerd-fonts.recurseForDerivations
-      # nerd-fonts.fira-code
-      # nerd-fonts.recursive-mono
-      # nerd-fonts.fira-mono
+      nerd-fonts.fira-code
+      nerd-fonts.recursive-mono
+      nerd-fonts.fira-mono
       # nerd-fonts.roboto-mono
       # nerd-fonts.geist-mono
       # nerd-fonts.sauce-code-pro
