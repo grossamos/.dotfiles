@@ -205,27 +205,27 @@
       # nerd-fonts.roboto-mono
       # nerd-fonts.geist-mono
       # nerd-fonts.sauce-code-pro
-      # nerd-fonts.go-mono
-      # nerd-fonts.shure-tech-mono
-      # nerd-fonts.gohufont
-      # nerd-fonts.space-mono
-      # nerd-fonts.hack
-      # nerd-fonts.symbols-only
-      # nerd-fonts.hasklug
-      # nerd-fonts.terminess-ttf
-      # nerd-fonts.heavy-data
-      # nerd-fonts.tinos
-      # nerd-fonts.hurmit
-      # nerd-fonts.ubuntu
-      # nerd-fonts.im-writing
-      # nerd-fonts.ubuntu-mono
-      # nerd-fonts.inconsolata
-      # nerd-fonts.ubuntu-sans
-      # nerd-fonts.inconsolata-go
-      # nerd-fonts.victor-mono
-      # nerd-fonts.inconsolata-lgc
-      # nerd-fonts.zed-mono
-      # nerd-fonts.intone-mono
+      nerd-fonts.go-mono
+      nerd-fonts.shure-tech-mono
+      nerd-fonts.gohufont
+      nerd-fonts.space-mono
+      nerd-fonts.hack
+      nerd-fonts.symbols-only
+      nerd-fonts.hasklug
+      nerd-fonts.terminess-ttf
+      nerd-fonts.heavy-data
+      nerd-fonts.tinos
+      nerd-fonts.hurmit
+      nerd-fonts.ubuntu
+      nerd-fonts.im-writing
+      nerd-fonts.ubuntu-mono
+      nerd-fonts.inconsolata
+      nerd-fonts.ubuntu-sans
+      nerd-fonts.inconsolata-go
+      nerd-fonts.victor-mono
+      nerd-fonts.inconsolata-lgc
+      nerd-fonts.zed-mono
+      nerd-fonts.intone-mono
     ];
     fontconfig = {
       enable = true;
