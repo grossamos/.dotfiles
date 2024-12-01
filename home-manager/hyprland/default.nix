@@ -81,12 +81,11 @@
           "$mod SHIFT, Escape, exec, hyprctl dispatch exit 1"
           "$mod SHIFT, R, exec, hyprctl reload"
           "$mod SHIFT, Q, killactive,"
-          "$mod SPACE, , exec, hyprctl switchxkblayout at-translated-set-2-keyboard next"
+          "$mod , space , exec, hyprctl switchxkblayout at-translated-set-2-keyboard next"
           "$mod, Q, killactive,"
           "$mod, R, exec, rofi -show drun -theme arthur"
           "$mod, F, fullscreen,"
           "$mod, B, exec, hyprshade toggle ~/.config/hypr/hyprshade.glsl"
-          "$mod, space , exec, hyprctl switchxkblayout"
           "$mod, Escape, exec, systemctl suspend"
           ", Print, exec, grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d--%H:%M:%S').png\""
 
