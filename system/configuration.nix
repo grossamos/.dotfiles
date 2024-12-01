@@ -147,8 +147,13 @@
       source-han-sans
       source-han-sans-japanese
       source-han-serif-japanese
+      nerd-fonts.lilex
+      nerd-fonts.martian-mono
+      nerd-fonts.monaspace
+      nerd-fonts.mplus
       nerd-fonts.fira-code
       nerd-fonts.inconsolata-lgc
+      nerd-fonts.sauce-code-pro
       nerd-fonts.jetbrains-mono
     ];
     fontconfig = {
