@@ -36,7 +36,6 @@
       input = {
         kb_layout = "us,de";
         numlock_by_default = true;
-        kb_options = "grp:win_space_toggle";
         follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
@@ -82,6 +81,7 @@
           "$mod SHIFT, Escape, exec, hyprctl dispatch exit 1"
           "$mod SHIFT, R, exec, hyprctl reload"
           "$mod SHIFT, Q, killactive,"
+          "$mod SPACE, hyprctl switchxkblayout at-translated-set-2-keyboard next"
           "$mod, Q, killactive,"
           "$mod, R, exec, rofi -show drun -theme arthur"
           "$mod, F, fullscreen,"
