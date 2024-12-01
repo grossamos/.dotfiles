@@ -81,7 +81,7 @@
           "$mod SHIFT, Escape, exec, hyprctl dispatch exit 1"
           "$mod SHIFT, R, exec, hyprctl reload"
           "$mod SHIFT, Q, killactive,"
-          "$mod SPACE, hyprctl switchxkblayout at-translated-set-2-keyboard next"
+          "$mod SPACE, , hyprctl switchxkblayout at-translated-set-2-keyboard next"
           "$mod, Q, killactive,"
           "$mod, R, exec, rofi -show drun -theme arthur"
           "$mod, F, fullscreen,"
