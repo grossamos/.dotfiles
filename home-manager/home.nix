@@ -55,6 +55,9 @@
     pkgs.lunarvim
     pkgs.obsidian
     pkgs.libreoffice-still
+    (pkgs.writeShellScriptBin "amphetamin" ''
+      systemd-inhibit --what=idle --who=Caffeine --why=Caffeine --mode=block sleep inf
+    '')
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
       pushd ~/.dotfiles
