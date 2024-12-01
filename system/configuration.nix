@@ -154,16 +154,16 @@
       nerd-fonts.fira-code
       nerd-fonts.inconsolata-lgc
       nerd-fonts.sauce-code-pro
-      # nerd-fonts.jetbrains-mono
-      # nerd-fonts._0xproto
-      # nerd-fonts.iosevka
-      # nerd-fonts._3270
-      # nerd-fonts.iosevka-term
-      # nerd-fonts.agave
-      # nerd-fonts.iosevka-term-slab
-      # nerd-fonts.anonymice
-      # nerd-fonts.jetbrains-mono
-      # nerd-fonts.arimo
+      nerd-fonts.jetbrains-mono
+      nerd-fonts._0xproto
+      nerd-fonts.iosevka
+      nerd-fonts._3270
+      nerd-fonts.iosevka-term
+      nerd-fonts.agave
+      nerd-fonts.iosevka-term-slab
+      nerd-fonts.anonymice
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.arimo
       # nerd-fonts.lekton
       # nerd-fonts.aurulent-sans-mono
       # nerd-fonts.liberation
