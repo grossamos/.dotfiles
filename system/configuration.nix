@@ -164,30 +164,30 @@
       nerd-fonts.anonymice
       nerd-fonts.jetbrains-mono
       nerd-fonts.arimo
-      # nerd-fonts.lekton
-      # nerd-fonts.aurulent-sans-mono
-      # nerd-fonts.liberation
-      # nerd-fonts.bigblue-terminal
-      # nerd-fonts.lilex
-      # nerd-fonts.bitstream-vera-sans-mono
-      # nerd-fonts.martian-mono
-      # nerd-fonts.blex-mono
-      # nerd-fonts.meslo-lg
-      # nerd-fonts.caskaydia-cove
-      # nerd-fonts.monaspace
-      # nerd-fonts.caskaydia-mono
-      # nerd-fonts.monofur
-      # nerd-fonts.code-new-roman
-      # nerd-fonts.monoid
-      # nerd-fonts.comic-shanns-mono
-      # nerd-fonts.mononoki
-      # nerd-fonts.commit-mono
-      # nerd-fonts.mplus
-      # nerd-fonts.cousine
-      # nerd-fonts.noto
-      # nerd-fonts.d2coding
-      # nerd-fonts.open-dyslexic
-      # nerd-fonts.daddy-time-mono
+      nerd-fonts.lekton
+      nerd-fonts.aurulent-sans-mono
+      nerd-fonts.liberation
+      nerd-fonts.bigblue-terminal
+      nerd-fonts.lilex
+      nerd-fonts.bitstream-vera-sans-mono
+      nerd-fonts.martian-mono
+      nerd-fonts.blex-mono
+      nerd-fonts.meslo-lg
+      nerd-fonts.caskaydia-cove
+      nerd-fonts.monaspace
+      nerd-fonts.caskaydia-mono
+      nerd-fonts.monofur
+      nerd-fonts.code-new-roman
+      nerd-fonts.monoid
+      nerd-fonts.comic-shanns-mono
+      nerd-fonts.mononoki
+      nerd-fonts.commit-mono
+      nerd-fonts.mplus
+      nerd-fonts.cousine
+      nerd-fonts.noto
+      nerd-fonts.d2coding
+      nerd-fonts.open-dyslexic
+      nerd-fonts.daddy-time-mono
       # nerd-fonts.overpass
       # nerd-fonts.dejavu-sans-mono
       # nerd-fonts.override
