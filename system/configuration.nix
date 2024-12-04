@@ -99,7 +99,7 @@
   users.users.amos = {
     isNormalUser = true;
     description = "amos";
-    extraGroups = ["networkmanager" "wheel" "adbusers"];
+    extraGroups = ["networkmanager" "wheel" "adbusers" "docker"];
     packages = with pkgs; [
       #  thunderbird
     ];
