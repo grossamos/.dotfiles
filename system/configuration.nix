@@ -130,7 +130,6 @@
     neovim
     git
     steam-run
-    docker
     # for my mouse
     openrazer-daemon
   ];
@@ -138,6 +137,11 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+      enable = true;
+      setSocketVariable = true;
+  };
 
   fonts = {
     packages = with pkgs; [
