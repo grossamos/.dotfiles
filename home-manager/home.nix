@@ -27,7 +27,13 @@
   home.packages = [
     pkgs.neofetch
     pkgs.docker
+    pkgs.wget
+    pkgs.luajitPackages.luarocks_bootstrap
+    pkgs.wayclip
+    pkgs.unzip
     pkgs.docker-compose
+    pkgs.php
+    pkgs.python3Full
     pkgs.otpclient
     pkgs.vulnix
     pkgs.hyprcursor
