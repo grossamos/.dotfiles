@@ -130,6 +130,7 @@
     neovim
     git
     steam-run
+    docker
     # for my mouse
     openrazer-daemon
   ];

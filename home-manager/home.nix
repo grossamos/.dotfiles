@@ -26,7 +26,6 @@
   # environment.
   home.packages = [
     pkgs.neofetch
-    pkgs.docker
     pkgs.wget
     pkgs.luajitPackages.luarocks_bootstrap
     pkgs.wayclip
@@ -143,6 +142,9 @@
       enable = true;
       shellAliases = {
         ssh = "kitten ssh";
+        vim = "lvim";
+        nvim = "lvim";
+        vi = "lvim";
       };
     };
   };
