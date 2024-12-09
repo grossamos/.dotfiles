@@ -26,6 +26,7 @@
   # environment.
   home.packages = [
     pkgs.neofetch
+    pkgs.insomnia
     pkgs.wget
     pkgs.luajitPackages.luarocks_bootstrap
     pkgs.wayclip
