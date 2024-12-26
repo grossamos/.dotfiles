@@ -26,6 +26,7 @@
   # environment.
   home.packages = [
     pkgs.neofetch
+    pkgs.pinentry-tty
     pkgs.tor-browser
     pkgs.gnupg
     pkgs.nmap
