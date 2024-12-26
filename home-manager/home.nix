@@ -27,6 +27,7 @@
   home.packages = [
     pkgs.neofetch
     pkgs.tor-browser
+    pkgs.gnupg
     pkgs.nmap
     pkgs.sbctl
     pkgs.insomnia
