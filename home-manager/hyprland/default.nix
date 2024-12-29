@@ -80,7 +80,7 @@
           "$mod SHIFT, return, exec, firefox"
           "$mod, return, exec, kitty"
           "$mod, mouse:272, movewindow"
-          "$mod, mouse:273, resizeactive"
+          "$mod SHIFT, mouse:272, resizeactive"
           "$mod SHIFT, Escape, exec, hyprctl dispatch exit 1"
           "$mod SHIFT, R, exec, hyprctl reload"
           "$mod SHIFT, Q, killactive,"
