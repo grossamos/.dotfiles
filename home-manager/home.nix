@@ -38,6 +38,7 @@
     pkgs.unzip
     pkgs.docker-compose
     pkgs.php
+    pkgs.dolphin-emu
     pkgs.python3Full
     pkgs.otpclient
     pkgs.vulnix
