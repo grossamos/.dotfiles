@@ -137,6 +137,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.git.signing.key = "0x4E798F3612AB60154B338DBC69AB9B5879336590";
 
   programs = {
     direnv = {
