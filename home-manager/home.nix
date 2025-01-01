@@ -26,6 +26,7 @@
   # environment.
   home.packages = [
     pkgs.neofetch
+    pkgs.blender
     pkgs.pinentry-curses
     pkgs.tor-browser
     pkgs.nmap
