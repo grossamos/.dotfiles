@@ -26,7 +26,7 @@
   # environment.
   home.packages = [
     pkgs.neofetch
-    pkgs.pinentry-tty
+    pkgs.pinentry-curses
     pkgs.tor-browser
     pkgs.nmap
     pkgs.sbctl
