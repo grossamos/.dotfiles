@@ -29,6 +29,7 @@
     pkgs.pinentry-curses
     pkgs.tor-browser
     pkgs.nmap
+    pkgs.wireshark
     pkgs.sbctl
     pkgs.insomnia
     pkgs.wget
