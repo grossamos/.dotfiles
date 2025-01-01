@@ -28,7 +28,6 @@
     pkgs.neofetch
     pkgs.pinentry-tty
     pkgs.tor-browser
-    pkgs.gnupg
     pkgs.nmap
     pkgs.sbctl
     pkgs.insomnia
