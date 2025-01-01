@@ -78,7 +78,7 @@
       git diff -U0 *.nix
       sudo nixos-rebuild switch --flake .
       gen=$(nixos-rebuild list-generations | grep current)
-      git commit -m "$gen"
+      git commit -S -m "$gen"
       git push
       popd
     '')
@@ -137,7 +137,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.git.signing.key = "0x4E798F3612AB60154B338DBC69AB9B5879336590";
+  programs.git.signing.key = "0x3DBB8E38AA2E7F5B107F694A69B0B58C8A26A7B1";
 
   programs = {
     direnv = {
