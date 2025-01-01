@@ -58,6 +58,7 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   services.pcscd.enable = true;
+  services.dbus.packages = [ pkgs.gcr ];
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-curses;
