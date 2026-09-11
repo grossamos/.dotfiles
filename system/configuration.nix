@@ -78,7 +78,7 @@
   users.users."amos" = {
     isNormalUser = true;
     description = "amos";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     	ghostty
     ];
