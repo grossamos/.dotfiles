@@ -51,7 +51,7 @@
       move-to-workspace-9 = ["<Super><Shift>9"];
       move-to-workspace-10 = ["<Super><Shift>0"];
 
-      close = ["<Super>Escape"];
+      close = ["<Super><Shift>Q"];
     };
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-left = ["<Super>j"];
@@ -61,7 +61,7 @@
       num-workspaces = 10;
     };
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      screensaver = ["<Super>q"];
+      screensaver = ["<Super>Escape"];
     };
   };
 }
