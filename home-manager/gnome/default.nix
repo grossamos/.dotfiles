@@ -2,8 +2,9 @@
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [
-        "org.gnome.Console.desktop"
-        "org.gnome.Nautilus.desktop"
+	      "librewolf.desktop"
+          "com.mitchellh.ghostty.desktop"
+          "org.gnome.Nautilus.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {
@@ -50,7 +51,7 @@
       move-to-workspace-9 = ["<Super><Shift>9"];
       move-to-workspace-10 = ["<Super><Shift>0"];
 
-      close = ["<Super><Shift>q"];
+      close = ["<Super>Escape"];
     };
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-left = ["<Super>j"];

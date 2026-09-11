@@ -6,7 +6,7 @@
     ../waybar
   ];
   home.packages = with pkgs; [
-    rofi-wayland # application launcher
+    rofi # application launcher
     hyprlock # lock screen
     hypridle
     dunst # notification deamon
@@ -50,10 +50,10 @@
           "hypridle &"
         ];
       };
-      monitor = [
-        ", preferred, auto, 1, mirror, eDP-1"
-        "eDP-1,1920x1080@60,0x0,1"
-      ];
+      #monitor = [
+      #  ", preferred, auto, 1, mirror, eDP-1"
+      #  "eDP-1,1920x1080@60,0x0,1"
+      #];
       animations = {
         enabled = 0;
       };
@@ -77,8 +77,8 @@
       "$mod" = "SUPER";
       bind =
         [
-          "$mod SHIFT, return, exec, firefox"
-          "$mod, return, exec, kitty"
+          "$mod SHIFT, return, exec, librewolf"
+          "$mod, return, exec, ghostty"
           "$mod, mouse:272, movewindow"
           "$mod SHIFT, mouse:272, resizeactive"
           "$mod SHIFT, Escape, exec, hyprctl dispatch exit 1"

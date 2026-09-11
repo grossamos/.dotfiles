@@ -13,6 +13,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "cifs" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -97,10 +98,26 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
+  environment.systemPackages = with pkgs; [
+    cifs-utils
+  ];
+
+    fileSystems."/home/amos/Atlas" = {
+    device = "//atlas.uni.lux/users/amos.gross";
+    fsType = "cifs";
+    options = [
+      "credentials=/home/amos/.smb-atlas"
+      "uid=amos"
+      "gid=users"
+      "vers=3.0"
+      "rw"
+      "_netdev"
+      "nofail"
+      "x-systemd.automount"
+      "noauto"
+      "x-systemd.idle-timeout=60"
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

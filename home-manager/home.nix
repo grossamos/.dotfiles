@@ -2,9 +2,8 @@
   imports = [
     ./git
     ./gnome
-#    ./hyprland
-#    ./kitty
-#    ./browsers.nix
+    ./hyprland
+	./notes.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -27,18 +26,18 @@
     pkgs.neovim
     pkgs.ranger
     pkgs.tmux
+    pkgs.fff
     pkgs.librewolf
     pkgs.teams-for-linux
     (pkgs.writeShellScriptBin "rebuild" ''
-      set -e
+	  set -euxo pipefail
       pushd ~/.dotfiles
       git add .
       nix flake update
-      alejandra . &>/dev/null
       git diff -U0 *.nix
       sudo nixos-rebuild switch --flake .
-      gen=$(nixos-rebuild list-generations | grep current)
-      git commit -S -m "$gen"
+	  gen=$(nixos-rebuild list-generations | awk '$NF == "True" { print $1; exit }')
+      git commit -m "$gen"
       git push
       popd
     '')
@@ -94,6 +93,18 @@
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
+	  initContent = ''
+        bindkey -e
+        bindkey '^R' history-incremental-search-backward
+
+        bindkey "^[[1;5C" forward-word
+        bindkey "^[[1;5D" backward-word
+
+        bindkey "^[[1;3C" forward-word
+        bindkey "^[[1;3D" backward-word
+
+        bindkey -s '^[[2~' ""
+      '';
     };
   };
 

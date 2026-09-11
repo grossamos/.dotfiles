@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   programs.git = {
     enable = true;
-    userName = "grossamos";
-    userEmail = "email@amosgross.com";
-    extraConfig = {
+	settings = {
+	  user.name = "grossamos";
+	  user.email = "email@amosgross.com";
       credential.helper = "${
         pkgs.git.override {withLibsecret = true;}
       }/bin/git-credential-libsecret";
@@ -12,6 +12,6 @@
       pull.rebase = "false";
       init.defaultBranch = "main";
       core.editor = "nvim";
-    };
+	};
   };
 }
