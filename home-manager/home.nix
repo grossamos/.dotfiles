@@ -94,6 +94,8 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 	  initContent = ''
+	    PS1="%B%F{$_host_color}%n@%m%f%b:%B%F{blue}%~%f%b "
+
         bindkey -e
         bindkey '^R' history-incremental-search-backward
 
