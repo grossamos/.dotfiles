@@ -452,15 +452,6 @@ vim.lsp.config.rust_analyzer = {
 }
 vim.lsp.enable("rust_analyzer")
 
--- Markdown (marksman)
-vim.lsp.config.marksman = {
-    capabilities = capabilities,
-	cmd = { "marksman", "server" },
-	filetypes = { "markdown", "markdown.mdx" },
-	root_markers = { ".marksman.toml", ".git" },
-}
-vim.lsp.enable("marksman")
-
 -- LaTeX (texlab)
 local texlab_settings = { texlab = {} }
 if caps.latexmk then
