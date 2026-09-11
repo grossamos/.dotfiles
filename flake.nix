@@ -3,10 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +13,6 @@
     self,
     nixpkgs,
     home-manager,
-    lanzaboote,
     ...
   }: let
     user = "amos";
@@ -26,7 +21,6 @@
       system = "x86_64-linux";
       specialArgs = {inherit inputs self user;};
       modules = [
-        lanzaboote.nixosModules.lanzaboote
         ./system/configuration.nix
         home-manager.nixosModules.home-manager
         {

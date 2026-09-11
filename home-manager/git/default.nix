@@ -11,7 +11,7 @@
       credential."https://github.com".username = "grossamos";
       pull.rebase = "false";
       init.defaultBranch = "main";
-      core.editor = "lvim";
+      core.editor = "nvim";
     };
   };
 }
