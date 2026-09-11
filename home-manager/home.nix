@@ -30,7 +30,7 @@
     pkgs.librewolf
     pkgs.teams-for-linux
     (pkgs.writeShellScriptBin "rebuild" ''
-	  set -euxo pipefail
+	  set -e
       pushd ~/.dotfiles
       git add .
       nix flake update

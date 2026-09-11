@@ -376,14 +376,23 @@ vim.lsp.config.basedpyright = {
     settings = {
         python = {
             analysis = {
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                diagnosticMode = "workspace",
+                autosearchpaths = true,
+                uselibrarycodefortypes = true,
+                diagnosticmode = "workspace",
             },
         },
     },
 }
 vim.lsp.enable("basedpyright")
+
+-- Nix
+vim.lsp.config.nil_lsp = {
+    cmd = { "nil" },
+    filetypes = { "nix" },
+    root_markers = { "flake.nix", ".git" },
+    capabilities = capabilities,
+}
+vim.lsp.enable("nil_lsp")
 
 -- Go
 vim.lsp.config.gopls = {
