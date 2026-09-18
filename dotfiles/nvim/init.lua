@@ -40,6 +40,7 @@ vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/richwomanbtc/overleaf.nvim",
 	"https://github.com/OXY2DEV/markview.nvim",
+	"https://github.com/NMAC427/guess-indent.nvim",
 })
 
 -- General Settings
@@ -68,7 +69,8 @@ vim.opt.termguicolors = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
-vim.opt.autoindent = true
+vim.opt.autoindent = true 
+vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.ignorecase = true
@@ -653,11 +655,11 @@ require('overleaf').setup({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "tex",
-  callback = function()
-    vim.opt_local.spell = true
-    vim.opt_local.spelllang = "en_us" -- or your preferred language
-  end,
+	pattern = "tex",
+	callback = function()
+		vim.opt_local.spell = true
+		vim.opt_local.spelllang = "en_us" -- or your preferred language
+	end,
 })
 
 -- vim.opt.rtp:prepend("/home/amos/code/misc/borges.nvim")
@@ -668,3 +670,6 @@ vim.api.nvim_create_autocmd("FileType", {
 --   require("borges").setup()
 --   print("borges reloaded")
 -- end, {})
+
+require('guess-indent').setup {}
+
