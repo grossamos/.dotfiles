@@ -39,6 +39,7 @@ in
     pkgs.neovim
     pkgs.ranger
     pkgs.ripgrep
+    pkgs.file
     pkgs.tmux
     pkgs.librewolf
     pkgs.teams-for-linux
