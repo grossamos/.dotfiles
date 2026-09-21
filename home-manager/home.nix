@@ -40,6 +40,7 @@ in
     pkgs.tmux
     pkgs.librewolf
     pkgs.teams-for-linux
+    kagi.packages.${pkgs.system}.default
     jailedPi
 
     (pkgs.writeShellScriptBin "rebuild" ''
