@@ -1,4 +1,4 @@
-{ pkgs, kagi, jail-nix, ... }:
+{ pkgs, config, kagi, jail-nix, ... }:
 
 let
   jail = jail-nix.lib.init pkgs;
@@ -8,6 +8,7 @@ let
     pkgs.git
     pkgs.gnugrep
     pkgs.diffutils
+    pkgs.xh
     kagi.packages.${pkgs.system}.default
   ];
 
@@ -37,6 +38,7 @@ in
   home.packages = [
     pkgs.neovim
     pkgs.ranger
+    pkgs.ripgrep
     pkgs.tmux
     pkgs.librewolf
     pkgs.teams-for-linux
@@ -60,7 +62,11 @@ in
   home.file = {
     ".config/nvim/init.lua".source = ../dotfiles/nvim/init.lua;
     ".tmux.conf".source = ../dotfiles/tmux/.tmux.conf;
-    ".pi/agent/AGENTS.md".source = ../dotfiles/pi/AGENTS.md;
+  };
+  home.activation = {
+    installAgentsMd = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+      install -Dm644 ${../dotfiles/pi/AGENTS.md} "$HOME/.pi/agent/AGENTS.md"
+    '';
   };
 
   home.sessionVariables = {
