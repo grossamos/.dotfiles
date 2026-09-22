@@ -18,6 +18,7 @@ let
     mount-cwd
     network
     (readwrite (noescape "~/.pi/"))
+    (readonly (noescape "~/.config/kagi-cli/config.toml"))
     (add-pkg-deps agentPkgs)
   ];
 
