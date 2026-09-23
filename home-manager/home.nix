@@ -8,6 +8,7 @@ let
     pkgs.git
     pkgs.gnugrep
     pkgs.diffutils
+    pkgs.python314
     pkgs.xh
     kagi.packages.${pkgs.system}.default
   ];
