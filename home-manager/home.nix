@@ -29,7 +29,6 @@ in
   imports = [
     ./git
     ./gnome
-    ./hyprland
     ./notes.nix
   ];
 
@@ -48,6 +47,15 @@ in
     kagi.packages.${pkgs.system}.default
     jailedPi
 
+    # hyprland deps
+    pkgs.pipewire
+    pkgs.wireplumber
+    pkgs.dunst
+    pkgs.hyprpolkitagent
+    pkgs.networkmanagerapplet
+    pkgs.grim
+    pkgs.slurp
+
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
       pushd ~/.dotfiles
@@ -65,7 +73,9 @@ in
   home.file = {
     ".config/nvim/init.lua".source = ../dotfiles/nvim/init.lua;
     ".tmux.conf".source = ../dotfiles/tmux/.tmux.conf;
+    ".config/hypr/hyprland.lua".source = ../dotfiles/hypr/hyprland.lua;
   };
+
   home.activation = {
     installAgentsMd = config.lib.dag.entryAfter [ "writeBoundary" ] ''
       install -Dm644 ${../dotfiles/pi/AGENTS.md} "$HOME/.pi/agent/AGENTS.md"
