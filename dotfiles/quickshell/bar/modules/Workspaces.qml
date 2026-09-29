@@ -27,17 +27,10 @@ Rectangle {
                 id: ws
                 required property var modelData
 
-                width: modelData.active ? 38 : 18
+                width: 18
                 height: 18
                 radius: 9
                 color: modelData.focused ? Theme.accent : modelData.active ? Theme.accentDim : Theme.dot
-
-                Behavior on width {
-                    NumberAnimation {
-                        duration: 150
-                        easing.type: Easing.OutCubic
-                    }
-                }
 
                 Behavior on color {
                     ColorAnimation {
@@ -47,9 +40,9 @@ Rectangle {
 
                 Text {
                     anchors.centerIn: parent
-                    visible: ws.modelData.active || ws.modelData.urgent
-                    text: ws.modelData.urgent ? "!" : ws.modelData.id
-                    color: ws.modelData.urgent ? Theme.critical : Theme.accentText
+                    visible: ws.modelData.urgent
+                    text: "!"
+                    color: Theme.accentText
                     font.pixelSize: 11
                     font.bold: true
                 }

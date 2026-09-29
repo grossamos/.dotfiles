@@ -77,6 +77,7 @@ in
 
   home.file = {
     ".config/nvim/init.lua".source = ../dotfiles/nvim/init.lua;
+    ".config/ranger/rc.conf".source = ../dotfiles/ranger/rc.conf;
     ".tmux.conf".source = ../dotfiles/tmux/.tmux.conf;
     ".config/hypr/hyprland.lua".source = ../dotfiles/hypr/hyprland.lua;
     ".config/hypr/background.png".source = ../images/background.png;

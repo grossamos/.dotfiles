@@ -19,71 +19,53 @@ Variants {
             left: true
             right: true
         }
-        implicitHeight: Theme.barSize + 12
-        color: "transparent"
+        implicitHeight: Theme.barSize
+        color: Theme.bar
 
-        Rectangle {
-            id: island
+        Workspaces {
             anchors {
-                top: parent.top
                 left: parent.left
+                leftMargin: 12
+                verticalCenter: parent.verticalCenter
+            }
+            targetMonitor: bar.modelData.name
+        }
+
+        Text {
+            anchors.centerIn: parent
+            text: Time.time + "  •  " + Time.date
+            color: Theme.text
+            font.pixelSize: 13
+        }
+
+        Row {
+            anchors {
                 right: parent.right
-                topMargin: 6
-                bottomMargin: 0
-                leftMargin: 10
-                rightMargin: 10
+                rightMargin: 12
+                verticalCenter: parent.verticalCenter
             }
-            height: Theme.barSize
-            radius: Theme.radius
-            color: Theme.bar
-
-            Row {
-                id: leftCluster
-                anchors {
-                    left: parent.left
-                    leftMargin: 8
-                    verticalCenter: parent.verticalCenter
-                }
-                spacing: 8
-
-                Workspaces {
-                    anchors.verticalCenter: parent.verticalCenter
-                    targetMonitor: bar.modelData.name
-                }
-
-                StatusIcon {
-                    anchors.verticalCenter: parent.verticalCenter
-                    iconSource: Quickshell.iconPath(Net.icon)
-                    label: Net.connected ? Net.name : "offline"
-                    onActivated: () => Quickshell.execDetached(["nmrs-gui"])
-                }
-
-                StatusIcon {
-                    anchors.verticalCenter: parent.verticalCenter
-                    iconSource: Quickshell.iconPath(Battery.icon)
-                    label: Battery.ready ? Battery.percent + "%" : ""
-                    labelColor: !Battery.charging && !Battery.full && Battery.percent <= 20 ? Theme.critical : Theme.text
-                }
-            }
-
-            Text {
-                anchors.centerIn: parent
-                text: Time.time + "  •  " + Time.date
-                color: Theme.text
-                font.pixelSize: 15
-                font.weight: Font.DemiBold
-            }
+            spacing: 8
 
             StatusIcon {
-                anchors {
-                    right: parent.right
-                    rightMargin: 8
-                    verticalCenter: parent.verticalCenter
-                }
+                anchors.verticalCenter: parent.verticalCenter
                 iconSource: Quickshell.iconPath(Audio.icon)
                 label: Audio.percent + "%"
                 labelColor: Audio.muted ? Theme.critical : Theme.text
                 onActivated: () => Quickshell.execDetached(["hyprpwcenter"])
+            }
+
+            StatusIcon {
+                anchors.verticalCenter: parent.verticalCenter
+                iconSource: Quickshell.iconPath(Net.icon)
+                label: Net.connected ? Net.name : "offline"
+                onActivated: () => Quickshell.execDetached(["nmrs-gui"])
+            }
+
+            StatusIcon {
+                anchors.verticalCenter: parent.verticalCenter
+                iconSource: Quickshell.iconPath(Battery.icon)
+                label: Battery.ready ? Battery.percent + "%" : ""
+                labelColor: !Battery.charging && !Battery.full && Battery.percent <= 20 ? Theme.critical : Theme.text
             }
         }
     }
