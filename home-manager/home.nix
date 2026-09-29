@@ -1,4 +1,4 @@
-{ pkgs, config, kagi, jail-nix, ... }:
+{ pkgs, config, kagi, jail-nix, nmrs-gui, ... }:
 
 let
   jail = jail-nix.lib.init pkgs;
@@ -52,14 +52,14 @@ in
     pkgs.hypridle
     pkgs.pipewire
     pkgs.wireplumber
-    pkgs.dunst
+    pkgs.quickshell
+    pkgs.hyprpwcenter
+    nmrs-gui.packages.${pkgs.system}.default
     pkgs.hyprpolkitagent
     pkgs.hyprpaper
     pkgs.hyprlauncher
-    pkgs.networkmanagerapplet
     pkgs.grim
     pkgs.slurp
-    pkgs.noctalia
 
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
@@ -83,6 +83,10 @@ in
     ".config/hypr/hyprpaper.conf".source = ../dotfiles/hypr/hyprpaper.conf;
     ".config/hypr/hyprlock.conf".source = ../dotfiles/hypr/hyprlock.conf;
     ".config/hypr/hypridle.conf".source = ../dotfiles/hypr/hypridle.conf;
+    ".config/quickshell" = {
+      source = ../dotfiles/quickshell;
+      recursive = true;
+    };
   };
 
   home.activation = {
