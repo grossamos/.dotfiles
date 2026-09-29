@@ -343,7 +343,7 @@ hl.window_rule({
     float = true,
 })
 
-hl.workspace_rule({ workspace = "9", monitor = "DP-3" default = "DP-3" }) 
+hl.workspace_rule({ workspace = "9", monitor = "DP-3", default = "DP-3" }) 
 hl.workspace_rule({ workspace = "1", default = "DP-5" }) 
 hl.workspace_rule({ workspace = "2", default = "DP-5" }) 
 hl.workspace_rule({ workspace = "3", default = "DP-5" }) 
