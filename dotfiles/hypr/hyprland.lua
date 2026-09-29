@@ -46,6 +46,7 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "Adwaita")
+hl.env("XCURSOR_THEME", "Adwaita")
 
 
 -----------------------
@@ -193,7 +194,6 @@ hl.config({
     misc = {
         force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
-        disable_splash_rendering = true,
     },
 })
 
@@ -344,6 +344,11 @@ hl.window_rule({
 })
 
 hl.workspace_rule({ workspace = "9", monitor = "DP-3" }) 
+hl.workspace_rule({ workspace = "1", monitor = "DP-5" }) 
+hl.workspace_rule({ workspace = "2", monitor = "DP-5" }) 
+hl.workspace_rule({ workspace = "3", monitor = "DP-5" }) 
+hl.workspace_rule({ workspace = "4", monitor = "DP-5" }) 
+hl.workspace_rule({ workspace = "10", monitor = "DP-5" }) 
 
 hl.bind(
     "switch:on:Lid Switch",
