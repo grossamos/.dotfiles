@@ -73,6 +73,10 @@ in
       git push
       popd
     '')
+
+    (pkgs.writeShellScriptBin "amphetamin" ''
+      systemd-inhibit --what=idle --who=Caffeine --why=Caffeine --mode=block sleep inf
+    '')
   ];
 
   home.file = {

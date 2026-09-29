@@ -356,6 +356,8 @@ hl.window_rule({
     float = true,
 })
 
+hl.monitor({scale = 1.25})
+
 
 hl.workspace_rule({ workspace = "9", monitor = "DP-3", default = true })
 
@@ -376,7 +378,7 @@ hl.bind("switch:off:Lid Switch", function()
         disabled = false,
         mode = "preferred",
         position = "auto",
-        scale = 1,
+        scale = 1.25,
     })
 end, { locked = true })
 
