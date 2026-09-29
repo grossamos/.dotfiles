@@ -52,6 +52,7 @@ in
     pkgs.wireplumber
     pkgs.dunst
     pkgs.hyprpolkitagent
+    pkgs.hyprpaper
     pkgs.networkmanagerapplet
     pkgs.grim
     pkgs.slurp
@@ -74,6 +75,8 @@ in
     ".config/nvim/init.lua".source = ../dotfiles/nvim/init.lua;
     ".tmux.conf".source = ../dotfiles/tmux/.tmux.conf;
     ".config/hypr/hyprland.lua".source = ../dotfiles/hypr/hyprland.lua;
+    ".config/hypr/background.jpg".source = ../images/background.jpg;
+    ".config/hypr/hyprpaper.conf".source = ../dotfiles/hypr/hyprpaper.conf;
   };
 
   home.activation = {
