@@ -8,7 +8,7 @@ Singleton {
 
     readonly property var device: UPower.displayDevice
     readonly property bool ready: root.device?.ready ?? false
-    readonly property real percent: Math.round(root.device?.percentage ?? 0)
+    readonly property real percent: Math.round((root.device?.percentage ?? 0) * 100)
     readonly property bool charging: root.device?.state === UPowerDeviceState.Charging
     readonly property bool full: root.device?.state === UPowerDeviceState.FullyCharged
 

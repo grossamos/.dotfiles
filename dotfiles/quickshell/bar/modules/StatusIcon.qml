@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Effects
 import Quickshell.Widgets
 import qs.theme
 
@@ -20,10 +21,24 @@ Rectangle {
         anchors.centerIn: parent
         spacing: 6
 
-        IconImage {
+        Item {
+            width: 16
+            height: 16
             anchors.verticalCenter: parent.verticalCenter
-            implicitSize: 16
-            source: root.iconSource
+
+            IconImage {
+                id: icon
+                anchors.fill: parent
+                implicitSize: 16
+                source: root.iconSource
+            }
+
+            MultiEffect {
+                anchors.fill: parent
+                source: icon
+                colorization: 1.0
+                colorizationColor: root.labelColor
+            }
         }
 
         Text {
