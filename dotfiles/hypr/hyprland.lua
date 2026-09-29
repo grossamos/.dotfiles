@@ -356,7 +356,7 @@ hl.window_rule({
     float = true,
 })
 
-hl.monitor({scale = 1.25})
+hl.monitor({output = "eDP-1", scale = 1.25})
 
 
 hl.workspace_rule({ workspace = "9", monitor = "DP-3", default = true })
