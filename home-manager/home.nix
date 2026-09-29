@@ -53,10 +53,11 @@ in
     pkgs.dunst
     pkgs.hyprpolkitagent
     pkgs.hyprpaper
+    pkgs.hyprlauncher
     pkgs.networkmanagerapplet
     pkgs.grim
     pkgs.slurp
-    pkgs.hyprlauncher
+    pkgs.ashell
 
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
@@ -76,7 +77,7 @@ in
     ".config/nvim/init.lua".source = ../dotfiles/nvim/init.lua;
     ".tmux.conf".source = ../dotfiles/tmux/.tmux.conf;
     ".config/hypr/hyprland.lua".source = ../dotfiles/hypr/hyprland.lua;
-    ".config/hypr/background.jpg".source = ../images/background.jpg;
+    ".config/hypr/background.png".source = ../images/background.png;
     ".config/hypr/hyprpaper.conf".source = ../dotfiles/hypr/hyprpaper.conf;
   };
 
