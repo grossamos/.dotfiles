@@ -56,6 +56,7 @@ in
     pkgs.networkmanagerapplet
     pkgs.grim
     pkgs.slurp
+    pkgs.hyprlauncher
 
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
