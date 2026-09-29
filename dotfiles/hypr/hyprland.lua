@@ -351,15 +351,16 @@ hl.workspace_rule({ workspace = "3", monitor = "DP-5" })
 hl.workspace_rule({ workspace = "4", monitor = "DP-5" }) 
 hl.workspace_rule({ workspace = "10", monitor = "DP-5" }) 
 
-hl.bind(
-    "switch:on:Lid Switch",
-    hl.dsp.exec_cmd("hyprctl keyword monitor 'eDP-1,disable'"),
-    { locked = true }
-)
+hl.bind("switch:on:Lid Switch", function()
+    hl.monitor({ output = "eDP-1", disabled = true })
+end, { locked = true })
 
-hl.bind(
-    "switch:off:Lid Switch",
-    hl.dsp.exec_cmd("hyprctl keyword monitor 'eDP-1,preferred,auto,1'"),
-    { locked = true }
-)
+hl.bind("switch:off:Lid Switch", function()
+    hl.monitor({
+        output = "eDP-1",
+        mode = "preferred",
+        position = "auto",
+        scale = 1,
+    })
+end, { locked = true })
 
