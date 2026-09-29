@@ -50,7 +50,7 @@ Variants {
                 anchors.verticalCenter: parent.verticalCenter
                 iconSource: Quickshell.iconPath(Audio.icon)
                 label: Audio.percent + "%"
-                labelColor: Audio.muted ? Theme.critical : Theme.text
+                labelColor: Audio.muted ? Theme.accent : Theme.text
                 onActivated: () => Quickshell.execDetached(["hyprpwcenter"])
             }
 
