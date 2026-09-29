@@ -57,7 +57,7 @@ in
     pkgs.networkmanagerapplet
     pkgs.grim
     pkgs.slurp
-    pkgs.ashell
+    pkgs.noctalia
 
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
