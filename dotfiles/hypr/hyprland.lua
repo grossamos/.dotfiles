@@ -83,8 +83,8 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = "rgb(ffffff)",
+            inactive_border = "rgba(ffffff00)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -170,8 +170,9 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 -- See https://wiki.hypr.land/configuring/layouts/dwindle-layout/ for more
 hl.config({
     dwindle = {
-        preserve_split = false, -- You probably want this
+        preserve_split = true, -- You probably want this
         smart_split = false,
+        force_split = 2,
     },
 })
 
