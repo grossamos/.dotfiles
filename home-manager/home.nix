@@ -48,6 +48,8 @@ in
     jailedPi
 
     # hyprland deps
+    pkgs.hyprlock
+    pkgs.hypridle
     pkgs.pipewire
     pkgs.wireplumber
     pkgs.dunst
@@ -79,6 +81,8 @@ in
     ".config/hypr/hyprland.lua".source = ../dotfiles/hypr/hyprland.lua;
     ".config/hypr/background.png".source = ../images/background.png;
     ".config/hypr/hyprpaper.conf".source = ../dotfiles/hypr/hyprpaper.conf;
+    ".config/hypr/hyprlock.conf".source = ../dotfiles/hypr/hyprlock.conf;
+    ".config/hypr/hypridle.conf".source = ../dotfiles/hypr/hypridle.conf;
   };
 
   home.activation = {
