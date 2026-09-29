@@ -33,7 +33,7 @@ local menu        = "hyprlauncher"
 hl.on("hyprland.start", function () 
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("hyprctl setcursor Adwaita 24")
-  hl.exec_cmd("noctilia")
+  hl.exec_cmd("noctalia")
   hl.exec_cmd("nm-applet")
 end)
 
@@ -344,20 +344,14 @@ hl.window_rule({
     float = true,
 })
 
-local has_dp3 = hl.get_monitor("DP-3") ~= nil
-local has_dp5 = hl.get_monitor("DP-5") ~= nil
 
-if has_dp3 then
-    hl.workspace_rule({ workspace = "9", monitor = "DP-3", default = true })
-end
+hl.workspace_rule({ workspace = "9", monitor = "DP-3", default = true })
 
-if has_dp5 then
-    hl.workspace_rule({ workspace = "1", monitor = "DP-5", default = true })
-    hl.workspace_rule({ workspace = "2", monitor = "DP-5" })
-    hl.workspace_rule({ workspace = "3", monitor = "DP-5" })
-    hl.workspace_rule({ workspace = "4", monitor = "DP-5" })
-    hl.workspace_rule({ workspace = "10", monitor = "DP-5" })
-end
+hl.workspace_rule({ workspace = "1", monitor = "DP-5", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "DP-5" })
+hl.workspace_rule({ workspace = "3", monitor = "DP-5" })
+hl.workspace_rule({ workspace = "4", monitor = "DP-5" })
+hl.workspace_rule({ workspace = "10", monitor = "DP-5" })
 
 
 hl.bind("switch:on:Lid Switch", function()
