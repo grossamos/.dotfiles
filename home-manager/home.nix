@@ -117,6 +117,8 @@ in
         bindkey "^[[1;3D" backward-word
 
         bindkey -s '^[[2~' ""
+
+        alias ssh='ghostty +ssh --'
       '';
     };
   };
