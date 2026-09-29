@@ -44,6 +44,7 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "Adwaita")
 
 
 -----------------------
@@ -92,7 +93,7 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 10,
+        rounding       = 5,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
@@ -100,7 +101,7 @@ hl.config({
         inactive_opacity = 1.0,
 
         shadow = {
-            enabled      = true,
+            enabled      = false,
             range        = 4,
             render_power = 3,
             color        = 0xee1a1a1a,
@@ -115,7 +116,7 @@ hl.config({
     },
 
     animations = {
-        enabled = true,
+        enabled = false,
     },
 })
 
@@ -191,6 +192,7 @@ hl.config({
     misc = {
         force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+        disable_splash_rendering = true,
     },
 })
 
@@ -340,4 +342,17 @@ hl.window_rule({
     float = true,
 })
 
-hl.workspace_rule({ workspace = "9", monitor = "eDP-1" }) 
+hl.workspace_rule({ workspace = "9", monitor = "DP-3" }) 
+
+hl.bind(
+    "switch:on:Lid Switch",
+    hl.dsp.exec_cmd("hyprctl keyword monitor 'eDP-1,disable'"),
+    { locked = true }
+)
+
+hl.bind(
+    "switch:off:Lid Switch",
+    hl.dsp.exec_cmd("hyprctl keyword monitor 'eDP-1,preferred,auto,1'"),
+    { locked = true }
+)
+
