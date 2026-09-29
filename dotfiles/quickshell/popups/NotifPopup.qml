@@ -14,7 +14,7 @@ Variants {
         screen: modelData
 
         property var cards: []
-        readonly property bool onFocusedScreen: Hyprland.focusedMonitor?.name === modelData.name
+        readonly property bool focusedScreen: Hyprland.focusedMonitor?.name === modelData.name
         readonly property int cardWidth: 380
 
         function setHover(id, hover) {
@@ -61,7 +61,7 @@ Variants {
             }
         }
 
-        visible: popup.cards.length > 0 && popup.onFocusedScreen
+        visible: popup.cards.length > 0 && popup.focusedScreen
         implicitWidth: popup.cardWidth
         implicitHeight: visible ? stack.implicitHeight : 0
 
@@ -162,7 +162,7 @@ Variants {
                                 anchors.centerIn: parent
                                 visible: card.notif.appIcon.length === 0
                                 text: "!"
-                                color: Theme.onAccent
+                                color: Theme.accentText
                                 font.pixelSize: 20
                                 font.bold: true
                             }

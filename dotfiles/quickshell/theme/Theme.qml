@@ -10,7 +10,7 @@ Singleton {
     readonly property color dot: "#34343f"
     readonly property color accent: "#aab6f5"
     readonly property color accentDim: "#8d9bea"
-    readonly property color onAccent: "#14141b"
+    readonly property color accentText: "#14141b"
     readonly property color text: "#e8e8f0"
     readonly property color textDim: "#9a9aad"
     readonly property color critical: "#f7768e"

@@ -49,7 +49,7 @@ Rectangle {
                     anchors.centerIn: parent
                     visible: ws.modelData.active || ws.modelData.urgent
                     text: ws.modelData.urgent ? "!" : ws.modelData.id
-                    color: ws.modelData.urgent ? Theme.critical : Theme.onAccent
+                    color: ws.modelData.urgent ? Theme.critical : Theme.accentText
                     font.pixelSize: 11
                     font.bold: true
                 }

@@ -10,6 +10,12 @@ hl.monitor({
     scale    = "auto",
 })
 
+hl.config({
+    cursor = {
+        default_monitor = "DP-5",
+    },
+})
+
 
 ---------------------
 ---- MY PROGRAMS ----
