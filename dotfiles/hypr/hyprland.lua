@@ -270,7 +270,16 @@ hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + K",    hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + J",  hl.dsp.window.move({ direction = "down" }))
 
-hl.bind("SUPER + S", hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + S", function()
+    local ws = hl.get_active_special_workspace() or hl.get_active_workspace()
+    if not ws then return end
+
+    hl.workspace_rule({
+        workspace = ws.special and tostring(ws.name) or "name:" .. tostring(ws.name),
+        layout = ws.tiled_layout == "monocle" and "dwindle" or "monocle",
+    })
+end)
+
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
