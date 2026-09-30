@@ -60,6 +60,7 @@ in
     pkgs.hyprlauncher
     pkgs.grim
     pkgs.slurp
+    pkgs.brightnessctl
 
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
