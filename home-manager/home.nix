@@ -61,6 +61,7 @@ in
     pkgs.grim
     pkgs.slurp
     pkgs.brightnessctl
+    pkgs.playerctl
 
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
