@@ -256,6 +256,7 @@ local closeWindowBind = hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close()
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("loginctl lock-session && systemctl suspend"))
+hl.bind(mainMod .. " + CONTROL + ESCAPE", hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 
