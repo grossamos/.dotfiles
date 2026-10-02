@@ -53,6 +53,12 @@
     layout = "us,de";
   };
 
+  hardware.keyboard.qmk = {
+    enable = true;
+    keychronSupport = true;
+  };
+
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

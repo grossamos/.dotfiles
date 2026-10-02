@@ -85,6 +85,12 @@ in
     ".config/nvim/init.lua".source = ../dotfiles/nvim/init.lua;
     ".config/ranger/rc.conf".source = ../dotfiles/ranger/rc.conf;
     ".tmux.conf".source = ../dotfiles/tmux/.tmux.conf;
+    ".tmux/plugins/tpm".source = pkgs.fetchFromGitHub {
+      owner = "tmux-plugins";
+      repo = "tpm";
+      rev = "7bdb7ca33c9cc6440a600202b50142f401b6fe21"; 
+      hash = "sha256-CeI9Wq6tHqV68woE11lIY4cLoNY8XWyXyMHTDmFKJKI="; 
+    };
     ".config/hypr/hyprland.lua".source = ../dotfiles/hypr/hyprland.lua;
     ".config/hypr/background.png".source = ../images/background.png;
     ".config/hypr/hyprpaper.conf".source = ../dotfiles/hypr/hyprpaper.conf;
