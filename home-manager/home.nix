@@ -5,11 +5,13 @@ let
   agentPkgs = [
     pkgs.bashInteractive
     pkgs.jq
+    pkgs.poppler-utils
     pkgs.git
     pkgs.gnugrep
     pkgs.diffutils
     pkgs.python314
     pkgs.xh
+    pkgs.fff
     kagi.packages.${pkgs.system}.default
   ];
 
