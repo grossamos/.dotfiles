@@ -371,13 +371,13 @@ hl.window_rule({
 hl.monitor({output = "eDP-1", scale = 1.25})
 
 
-hl.workspace_rule({ workspace = "9", monitor = "DP-3", default = true })
+hl.workspace_rule({ workspace = "9", monitor = "DP-4", default = true })
 
-hl.workspace_rule({ workspace = "1", monitor = "DP-5", default = true })
-hl.workspace_rule({ workspace = "2", monitor = "DP-5" })
-hl.workspace_rule({ workspace = "3", monitor = "DP-5" })
-hl.workspace_rule({ workspace = "4", monitor = "DP-5" })
-hl.workspace_rule({ workspace = "10", monitor = "DP-5" })
+hl.workspace_rule({ workspace = "1", monitor = "DP-7", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "DP-7" })
+hl.workspace_rule({ workspace = "3", monitor = "DP-7" })
+hl.workspace_rule({ workspace = "4", monitor = "DP-7" })
+hl.workspace_rule({ workspace = "10", monitor = "DP-7" })
 
 
 hl.bind("switch:on:Lid Switch", function()
