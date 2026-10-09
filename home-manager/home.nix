@@ -12,6 +12,9 @@ let
     pkgs.python314
     pkgs.xh
     pkgs.fff
+    pkgs.nix
+    pkgs.gnused
+    pkgs.gawk
     kagi.packages.${pkgs.system}.default
   ];
 
