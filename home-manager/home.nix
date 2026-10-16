@@ -24,11 +24,13 @@ let
     mount-cwd
     network
     (readwrite (noescape "~/.pi/"))
+    (readwrite (noescape "~/.claude/"))
     (readonly (noescape "~/.config/kagi-cli/config.toml"))
     (add-pkg-deps agentPkgs)
   ];
 
   jailedPi = jail "pi" pkgs.pi-coding-agent agentPermissions;
+  jailedClaude = jail "claude" pkgs.claude-code agentPermissions;
 in
 {
   imports = [
@@ -51,6 +53,7 @@ in
     pkgs.teams-for-linux
     kagi.packages.${pkgs.system}.default
     jailedPi
+    jailedClaude
 
     # hyprland deps
     pkgs.hyprlock
