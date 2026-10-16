@@ -25,6 +25,7 @@ let
     network
     (readwrite (noescape "~/.pi/"))
     (readwrite (noescape "~/.claude/"))
+    (readwrite (noescape "~/.claude.json"))
     (readonly (noescape "~/.config/kagi-cli/config.toml"))
     (add-pkg-deps agentPkgs)
   ];
