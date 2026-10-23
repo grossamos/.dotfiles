@@ -19,15 +19,22 @@ let
     echo "$1" >> /run/browser/urls
   '';
 
-  # Minimal /dev/log listener; docker logs only shows lines, syslog datagrams have no newline.
+  # Minimal syslog/journal listener. docker logs only shows whole lines, and
+  # syslog datagrams have no newline; the agent may also log via the journal socket.
   syslogSink = pkgs.writeScript "syslog-sink" ''
     #!/usr/bin/python3 -u
-    import os, socket
-    s = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
-    s.bind("/dev/log")
-    os.chmod("/dev/log", 0o666)
+    import os, selectors, socket
+    sel = selectors.DefaultSelector()
+    for path in ("/dev/log", "/run/systemd/journal/socket", "/run/systemd/journal/dev-log"):
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        s = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
+        s.bind(path)
+        os.chmod(path, 0o666)
+        sel.register(s, selectors.EVENT_READ)
     while True:
-        print(s.recv(65536).decode(errors="replace").rstrip("\0\n"), flush=True)
+        for key, _ in sel.select():
+            msg = key.fileobj.recv(65536).decode(errors="replace").rstrip("\0\n")
+            print(msg.replace("\n", " | "), flush=True)
   '';
 
   vpn = pkgs.writeShellApplication {
