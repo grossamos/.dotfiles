@@ -94,7 +94,7 @@ let
       # Host networking so the tunnel, routes and DNS land on the host itself.
       docker run -d --name "$name" \
         --network host \
-        --cap-add NET_ADMIN \
+        --privileged \
         --device /dev/net/tun \
         -v "$browserdir:/run/browser" \
         -e WEBKIT_DISABLE_SANDBOX_THIS_IS_DANGEROUS=1 \
