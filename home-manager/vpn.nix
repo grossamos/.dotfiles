@@ -3,7 +3,7 @@
 let
   dockerfile = pkgs.writeText "cisco-vpn.Dockerfile" ''
     FROM fedora:41
-    RUN dnf install -y iproute iptables-nft procps-ng && dnf clean all
+    RUN dnf install -y iproute iptables-nft procps-ng gtk3 webkit2gtk4.1 dbus-x11 libXtst mesa-dri-drivers adwaita-icon-theme google-noto-sans-fonts && dnf clean all
     COPY xdg-open /usr/bin/xdg-open
     COPY xdg-open /usr/local/bin/xdg-open
     COPY cisco.rpm /tmp/cisco.rpm
@@ -80,12 +80,20 @@ let
 
       trap cleanup EXIT INT TERM
 
+      # The CLI can't do SAML/MFA logins, so the GUI runs in the container and
+      # shows up on the host's X server (XWayland).
+      gui=(-e "DISPLAY=''${DISPLAY:-:0}" -v /tmp/.X11-unix:/tmp/.X11-unix)
+      if [ -n "''${XAUTHORITY:-}" ]; then
+        gui+=(-e XAUTHORITY=/tmp/.Xauthority -v "$XAUTHORITY:/tmp/.Xauthority:ro")
+      fi
+
       # Host networking so the tunnel, routes and DNS land on the host itself.
       docker run -d --name "$name" \
         --network host \
         --cap-add NET_ADMIN \
         --device /dev/net/tun \
         -v "$browserdir:/run/browser" \
+        "''${gui[@]}" \
         "$image" >/dev/null
 
       # Open login URLs the container asks for in the host's browser. The SAML
@@ -105,7 +113,19 @@ let
       done
       echo
 
-      docker exec -it "$name" "$cisco" connect "$host"
+      docker exec -d "$name" /opt/cisco/secureclient/bin/vpnui
+      echo "Cisco Secure Client window opened: connect to $host and finish the MFA login."
+
+      echo -n "Waiting for the tunnel"
+      until docker exec "$name" "$cisco" state 2>/dev/null | grep -q "state: Connected"; do
+        if ! docker inspect -f '{{.State.Running}}' "$name" 2>/dev/null | grep -q true; then
+          echo "VPN container exited." >&2
+          exit 1
+        fi
+        echo -n "."
+        sleep 2
+      done
+      echo
 
       # The client rewrites resolv.conf inside the container; hand it to the host resolver.
       docker exec "$name" cat /etc/resolv.conf | sudo resolvconf -a "$name" || \
