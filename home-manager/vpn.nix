@@ -27,6 +27,7 @@ let
       pkgs.docker
       pkgs.coreutils
       pkgs.xdg-utils
+      pkgs.xhost
     ];
 
     text = ''
@@ -58,6 +59,7 @@ let
         docker rm -f "$name" >/dev/null 2>&1 || true
         [ -z "''${opener:-}" ] || kill "$opener" 2>/dev/null || true
         rm -rf "$browserdir"
+        xhost -SI:localuser:root >/dev/null 2>&1 || true
         sudo resolvconf -d "$name" >/dev/null 2>&1 || true
         echo "Networking restored."
       }
@@ -82,6 +84,8 @@ let
 
       # The CLI can't do SAML/MFA logins, so the GUI runs in the container and
       # shows up on the host's X server (XWayland).
+      # Let the container's root user talk to the X server (revoked on exit).
+      xhost +SI:localuser:root
       gui=(-e "DISPLAY=''${DISPLAY:-:0}" -v /tmp/.X11-unix:/tmp/.X11-unix)
       if [ -n "''${XAUTHORITY:-}" ]; then
         gui+=(-e XAUTHORITY=/tmp/.Xauthority -v "$XAUTHORITY:/tmp/.Xauthority:ro")
