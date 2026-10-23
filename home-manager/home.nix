@@ -38,6 +38,7 @@ in
     ./git
     ./gnome
     ./notes.nix
+    ./vpn.nix
   ];
 
   home.username = "amos";
