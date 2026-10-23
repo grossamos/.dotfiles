@@ -3,19 +3,31 @@
 let
   dockerfile = pkgs.writeText "cisco-vpn.Dockerfile" ''
     FROM fedora:41
-    RUN dnf install -y iproute iptables-nft procps-ng socat gtk3 webkit2gtk4.1 dbus-x11 libXtst mesa-dri-drivers adwaita-icon-theme google-noto-sans-fonts && dnf clean all
+    RUN dnf install -y iproute iptables-nft procps-ng python3 gtk3 webkit2gtk4.1 dbus-x11 libXtst mesa-dri-drivers adwaita-icon-theme google-noto-sans-fonts && dnf clean all
+    COPY syslog-sink /usr/local/bin/syslog-sink
     COPY xdg-open /usr/bin/xdg-open
     COPY xdg-open /usr/local/bin/xdg-open
     COPY cisco.rpm /tmp/cisco.rpm
     RUN dnf install -y /tmp/cisco.rpm && dnf clean all && rm /tmp/cisco.rpm
     # Cisco logs via syslog; forward /dev/log to stdout so `docker logs` shows it.
-    CMD ["sh", "-c", "socat -u UNIX-RECV:/dev/log,mode=0666 STDOUT & exec /opt/cisco/secureclient/bin/vpnagentd -execv_instance"]
+    CMD ["sh", "-c", "syslog-sink & exec /opt/cisco/secureclient/bin/vpnagentd -execv_instance"]
   '';
 
   # Stand-in for xdg-open inside the container: hands URLs to the host, which opens them.
   fakeXdgOpen = pkgs.writeScript "xdg-open" ''
     #!/bin/sh
     echo "$1" >> /run/browser/urls
+  '';
+
+  # Minimal /dev/log listener; docker logs only shows lines, syslog datagrams have no newline.
+  syslogSink = pkgs.writeScript "syslog-sink" ''
+    #!/usr/bin/python3 -u
+    import os, socket
+    s = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
+    s.bind("/dev/log")
+    os.chmod("/dev/log", 0o666)
+    while True:
+        print(s.recv(65536).decode(errors="replace").rstrip("\0\n"), flush=True)
   '';
 
   vpn = pkgs.writeShellApplication {
@@ -70,14 +82,17 @@ let
         docker rm -f "$name" >/dev/null
       fi
 
-      if ! docker image inspect "$image" >/dev/null 2>&1; then
+      # Rebuild when the image is missing or was built from an older Dockerfile.
+      built=$(docker image inspect "$image" --format '{{index .Config.Labels "dockerfile"}}' 2>/dev/null || true)
+      if [ "$built" != "${dockerfile}" ]; then
         rpms=("$HOME"/.vpn/cisco-secure-client-vpn-*.rpm)
         rpm="''${rpms[-1]}"
         echo "Building $image from $rpm"
         ctx=$(mktemp -d)
         cp "$rpm" "$ctx/cisco.rpm"
         cp ${fakeXdgOpen} "$ctx/xdg-open"
-        docker build -t "$image" -f ${dockerfile} "$ctx"
+        cp ${syslogSink} "$ctx/syslog-sink"
+        docker build -t "$image" --label "dockerfile=${dockerfile}" -f ${dockerfile} "$ctx"
         rm -rf "$ctx"
       fi
 
