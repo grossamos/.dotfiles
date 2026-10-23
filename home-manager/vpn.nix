@@ -3,12 +3,13 @@
 let
   dockerfile = pkgs.writeText "cisco-vpn.Dockerfile" ''
     FROM fedora:41
-    RUN dnf install -y iproute iptables-nft procps-ng gtk3 webkit2gtk4.1 dbus-x11 libXtst mesa-dri-drivers adwaita-icon-theme google-noto-sans-fonts && dnf clean all
+    RUN dnf install -y iproute iptables-nft procps-ng socat gtk3 webkit2gtk4.1 dbus-x11 libXtst mesa-dri-drivers adwaita-icon-theme google-noto-sans-fonts && dnf clean all
     COPY xdg-open /usr/bin/xdg-open
     COPY xdg-open /usr/local/bin/xdg-open
     COPY cisco.rpm /tmp/cisco.rpm
     RUN dnf install -y /tmp/cisco.rpm && dnf clean all && rm /tmp/cisco.rpm
-    CMD ["/opt/cisco/secureclient/bin/vpnagentd", "-execv_instance"]
+    # Cisco logs via syslog; forward /dev/log to stdout so `docker logs` shows it.
+    CMD ["sh", "-c", "socat -u UNIX-RECV:/dev/log,mode=0666 STDOUT & exec /opt/cisco/secureclient/bin/vpnagentd -execv_instance"]
   '';
 
   # Stand-in for xdg-open inside the container: hands URLs to the host, which opens them.
