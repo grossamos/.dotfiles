@@ -97,6 +97,10 @@ let
         --cap-add NET_ADMIN \
         --device /dev/net/tun \
         -v "$browserdir:/run/browser" \
+        -e WEBKIT_DISABLE_SANDBOX_THIS_IS_DANGEROUS=1 \
+        -e WEBKIT_DISABLE_COMPOSITING_MODE=1 \
+        -e WEBKIT_DISABLE_DMABUF_RENDERER=1 \
+        -e LIBGL_ALWAYS_SOFTWARE=1 \
         "''${gui[@]}" \
         "$image" >/dev/null
 
