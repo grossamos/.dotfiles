@@ -5,12 +5,24 @@ let
     FROM fedora:41
     RUN dnf install -y iproute iptables-nft procps-ng python3 gtk3 webkit2gtk4.1 dbus-x11 libXtst mesa-dri-drivers adwaita-icon-theme google-noto-sans-fonts && dnf clean all
     COPY syslog-sink /usr/local/bin/syslog-sink
+    COPY entrypoint /usr/local/bin/entrypoint
     COPY xdg-open /usr/bin/xdg-open
     COPY xdg-open /usr/local/bin/xdg-open
     COPY cisco.rpm /tmp/cisco.rpm
     RUN dnf install -y /tmp/cisco.rpm && dnf clean all && rm /tmp/cisco.rpm
-    # Cisco logs via syslog; forward /dev/log to stdout so `docker logs` shows it.
-    CMD ["sh", "-c", "syslog-sink & exec /opt/cisco/secureclient/bin/vpnagentd -execv_instance"]
+    CMD ["/usr/local/bin/entrypoint"]
+  '';
+
+  # Docker bind-mounts /etc/resolv.conf and /etc/hosts, and the Cisco agent renames
+  # them to back them up ("Device or resource busy" aborts the tunnel). Turn them
+  # into plain files first, then forward logs to stdout and run the agent.
+  entrypoint = pkgs.writeScript "entrypoint" ''
+    #!/bin/sh
+    for f in resolv.conf hosts; do
+      cp /etc/$f /tmp/$f.keep && umount /etc/$f && cp /tmp/$f.keep /etc/$f
+    done
+    syslog-sink &
+    exec /opt/cisco/secureclient/bin/vpnagentd -execv_instance
   '';
 
   # Stand-in for xdg-open inside the container: hands URLs to the host, which opens them.
@@ -99,6 +111,7 @@ let
         cp "$rpm" "$ctx/cisco.rpm"
         cp ${fakeXdgOpen} "$ctx/xdg-open"
         cp ${syslogSink} "$ctx/syslog-sink"
+        cp ${entrypoint} "$ctx/entrypoint"
         docker build -t "$image" --label "dockerfile=${dockerfile}" -f ${dockerfile} "$ctx"
         rm -rf "$ctx"
       fi
