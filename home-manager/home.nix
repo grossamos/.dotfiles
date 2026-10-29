@@ -12,6 +12,7 @@ let
     pkgs.python314
     pkgs.xh
     pkgs.fff
+    pkgs.pi-coding-agent
     pkgs.nix
     pkgs.gnused
     pkgs.gawk
