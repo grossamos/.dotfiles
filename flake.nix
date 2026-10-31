@@ -8,11 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     jail-nix.url = "sourcehut:~alexdavid/jail.nix";
-    kagi.url = "github:Microck/kagi-cli";
-    nmrs-gui = {
-      url = "github:networkmanager-rs/nmrs-gui";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs @ {
@@ -20,7 +15,6 @@
     nixpkgs,
     home-manager,
     jail-nix,
-    kagi,
     ...
   }: let
     user = "amos";
@@ -36,8 +30,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.amos = import ./home-manager/home.nix;
           home-manager.extraSpecialArgs = {
-            inherit inputs self user kagi jail-nix;
-            inherit (inputs) nmrs-gui;
+            inherit inputs self user jail-nix;
           };
         }
       ];

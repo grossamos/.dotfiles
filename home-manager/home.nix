@@ -1,4 +1,4 @@
-{ pkgs, config, kagi, jail-nix, nmrs-gui, ... }:
+{ pkgs, config, jail-nix, ... }:
 
 let
   jail = jail-nix.lib.init pkgs;
@@ -16,7 +16,6 @@ let
     pkgs.nix
     pkgs.gnused
     pkgs.gawk
-    kagi.packages.${pkgs.system}.default
   ];
 
   agentPermissions = with jail.combinators; [
@@ -27,7 +26,6 @@ let
     (readwrite (noescape "~/.pi/"))
     (readwrite (noescape "~/.claude/"))
     (readwrite (noescape "~/.claude.json"))
-    (readonly (noescape "~/.config/kagi-cli/config.toml"))
     (add-pkg-deps agentPkgs)
   ];
 
@@ -54,7 +52,8 @@ in
     pkgs.tmux
     pkgs.librewolf
     pkgs.teams-for-linux
-    kagi.packages.${pkgs.system}.default
+    pkgs.signal-desktop
+    pkgs.whatsapp-electron
     jailedPi
     jailedClaude
 
@@ -65,7 +64,6 @@ in
     pkgs.wireplumber
     pkgs.quickshell
     pkgs.hyprpwcenter
-    nmrs-gui.packages.${pkgs.system}.default
     pkgs.hyprpolkitagent
     pkgs.hyprpaper
     pkgs.hyprlauncher
@@ -73,6 +71,7 @@ in
     pkgs.slurp
     pkgs.brightnessctl
     pkgs.playerctl
+
 
     (pkgs.writeShellScriptBin "rebuild" ''
       set -e
