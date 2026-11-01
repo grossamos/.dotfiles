@@ -56,6 +56,8 @@ in
     pkgs.whatsapp-electron
     pkgs.protonmail-desktop
     pkgs.proton-vpn
+    pkgs.syncthing
+    pkgs.keepassxc
     jailedPi
     jailedClaude
 
