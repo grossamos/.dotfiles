@@ -54,6 +54,8 @@ in
     pkgs.teams-for-linux
     pkgs.signal-desktop
     pkgs.whatsapp-electron
+    pkgs.protonmail-desktop
+    pkgs.proton-vpn
     jailedPi
     jailedClaude
 
