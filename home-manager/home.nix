@@ -58,6 +58,7 @@ in
     pkgs.proton-vpn
     pkgs.syncthing
     pkgs.keepassxc
+    pkgs.coder
     jailedPi
     jailedClaude
 
